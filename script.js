@@ -6,99 +6,97 @@ const QUESTIONWRAP = document.querySelector('.question')
 const quizQuestions = [
     {
         question: 'Is javascript and java the same thing?',
-        isCorrectAnswer: false,
+        isCorrect: false,
         score: 0
     },
     {
         question: 'Did Michael Jackson invent Java Script?',
-        isCorrectAnswer: false,
+        isCorrect: false,
         score: 0
     },
     {
         question: 'Can JS be used for front end and back end?',
-        isCorrectAnswer: true,
+        isCorrect: true,
         score: 0
     },
     {
         question: 'Can we reassign const variable?',
-        isCorrectAnswer: false,
+        isCorrect: false,
         score: 0
     },
     {
         question: 'document.write(NaN == NaN) ? ',
-        isCorrectAnswer: false,
+        isCorrect: false,
         score: 0
     },
     {
         question: 'Is undefined a data type?',
-        isCorrectAnswer: true,
+        isCorrect: true,
         score: 0
     },
     {
         question: '{} === {} ?',
-        isCorrectAnswer: false,
+        isCorrect: false,
         score: 0
     },
     {
         question: 'Is JavaScript case-sensitive?',
-        isCorrectAnswer: true,
+        isCorrect: true,
         score: 0
     },
     {
         question: 'The external JavaScript file must contain the <script> tag',
-        isCorrectAnswer: true,
+        isCorrect: true,
         score: 0
     },
     {
         question: 'document.write(String("Hello") == "Hello") ? ',
-        isCorrectAnswer: true,
+        isCorrect: true,
         score: 0
     },
     {
         question: 'document.write( 10 > 9 > 8 === true ) ? ',
-        isCorrectAnswer: false,
+        isCorrect: false,
         score: 0
     },
     {
         question: 'All keys in an object are strings.',
-        isCorrectAnswer: true,
+        isCorrect: true,
         score: 0
     },
     {
         question: 'document.write(( true + false ) > 2 + true ) ? ',
-        isCorrectAnswer: false,
+        isCorrect: false,
         score: 0
     },
     {
         question: 'document.write(Number("1") - 1 == 0) ?',
-        isCorrectAnswer: true,
+        isCorrect: true,
         score: 0
     },
 ];
+
+QUESTIONWRAP.innerHTML = quizQuestions[0].question;
 
 let score = 0;
 let currentQuestionIndex = 0;
 
 const returnCurrentQuiz = (array) => {
-    console.log(array[currentQuestionIndex])
     return array[currentQuestionIndex];
 }
 
 const currentQuestion = returnCurrentQuiz(quizQuestions).question;
 
-const correctAnswer = returnCurrentQuiz(quizQuestions).isCorrectAnswer;
+//const correctAnswer = returnCurrentQuiz(quizQuestions).isCorrect;
 
 let TRUE_BUTTON = document.querySelector('.true');
 
 let FALSE_BUTTON = document.querySelector('.false');
 
 
-const isCorrectAnswer = (answer) => {
-    // if (answer === correctAnswer) {
-    //     score++;
-    // }
-    // currentQuestionIndex++;
-    answer === correctAnswer;
+const isCorrectAnswer = (answer, correctAnswer) => {
+    let res = answer === correctAnswer;
+    return res;
 }
 
 // const guess = (array, answer) => {
@@ -119,32 +117,32 @@ const isCorrectAnswer = (answer) => {
 
 BUTTONS.forEach((element) => {
     element.addEventListener('click', (e) => {
+        
+        console.log('click')
         let flag;
-
         if(e.target.classList.contains('true')) {
-            console.log('in true if');
+            console.log('true btn')
             flag = true;
-            isCorrectAnswer(flag);
-            returnCurrentQuiz(quizQuestions).question
-            currentQuestionIndex++;
-            score += 10;
-            console.log(score)
+            console.log(flag)
+            let answer = returnCurrentQuiz(quizQuestions).isCorrect;
+            //console.log(isCorrectAnswer(flag, answer))
+            if (isCorrectAnswer(flag, answer)) {
+                console.log('fegh')
+                score+=10; 
+                console.log(score)
+            }
         } else {
-            console.log('in false if');
             flag = false;
-            isCorrectAnswer(flag);
-            returnCurrentQuiz(quizQuestions).question
-            currentQuestionIndex++;
+            let answer = returnCurrentQuiz(quizQuestions).isCorrect;
+            //console.log(isCorrectAnswer(flag, answer))
+            if (isCorrectAnswer(flag, answer)) {
+                score+=10;
+                console.log(score)
+            }
         }
+        currentQuestionIndex++;
         QUESTIONWRAP.innerHTML = returnCurrentQuiz(quizQuestions).question;
-        // finish++;
-        // changeText();
-        // console.log(finish)
-        // if (finish === 14) {
-        //     alert('hoho')
-        // }
-        //setQuiz(QUESTIONWRAP, quizQuestions, 'question')
     })
 })
 
-console.log(quizQuestions[0]['question'])
+//console.log(quizQuestions[0]['question'])
