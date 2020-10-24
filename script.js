@@ -28,7 +28,7 @@ const quizQuestions = [
         score: 0
     },
     {
-        question: 'document.write(NaN == NaN) ? ',
+        question: "What will return <br><pre><code>document.write(NaN == NaN) ?</pre></code>",
         isCorrect: false,
         score: 0
     },
@@ -38,7 +38,7 @@ const quizQuestions = [
         score: 0
     },
     {
-        question: '{} === {} ?',
+        question: 'Can we multyplay a string with a number?',
         isCorrect: false,
         score: 0
     },
@@ -48,17 +48,12 @@ const quizQuestions = [
         score: 0
     },
     {
-        question: 'The external JavaScript file must contain the <script> tag',
+        question: 'What will return <br><pre><code>document.write(String("Hello") == "Hello") ? </pre></code>',
         isCorrect: true,
         score: 0
     },
     {
-        question: 'document.write(String("Hello") == "Hello") ? ',
-        isCorrect: true,
-        score: 0
-    },
-    {
-        question: 'document.write( 10 > 9 > 8 === true ) ? ',
+        question: 'What will return <br><pre><code>document.write( 10 > 9 > 8 === true ) ? </pre></code>',
         isCorrect: false,
         score: 0
     },
@@ -68,12 +63,12 @@ const quizQuestions = [
         score: 0
     },
     {
-        question: 'document.write(( true + false ) > 2 + true ) ? ',
+        question: 'What will return <br><pre><code>document.write(( true + false ) > 2 + true ) ? </pre></code>',
         isCorrect: false,
         score: 0
     },
     {
-        question: 'document.write(Number("1") - 1 == 0) ?',
+        question: 'What will return <br><pre><code>document.write(Number("1") - 1 == 0) ? </pre></code>',
         isCorrect: true,
         score: 0
     },
