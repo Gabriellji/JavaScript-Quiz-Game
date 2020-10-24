@@ -1,12 +1,11 @@
 const BUTTONS = document.querySelectorAll('.eightbit-btn');
 
 const HIDDEN_WRAPS = document.querySelectorAll('.hide');
-
 const QUESTIONWRAP = document.querySelector('.question');
 const TYPING_TEXT_WRAP = document.querySelector('.final_score');
-const TYPING_TEXT = document.querySelector('.type_text');
-
 const FIREWALK_WRAP = document.querySelector('.pyro');
+
+const TYPING_TEXT = document.querySelector('.type_text');
 
 const quizQuestions = [
     {
@@ -85,11 +84,11 @@ const returnCurrentQuiz = (array) => {
     return array[currentQuestionIndex];
 }
 
-const currentQuestion = returnCurrentQuiz(quizQuestions).question;
+//const currentQuestion = returnCurrentQuiz(quizQuestions).question;
 
-let TRUE_BUTTON = document.querySelector('.true');
+// const TRUE_BUTTON = document.querySelector('.true');
 
-let FALSE_BUTTON = document.querySelector('.false');
+// const FALSE_BUTTON = document.querySelector('.false');
 
 
 const isCorrectAnswer = (answer, correctAnswer) => {
@@ -102,15 +101,14 @@ let controlTimeOut;
 
 const typeWriter = () => {
   const speedOFTyping = 90;
-  const errorMessage = 'Your score is : ' + score + '!';
-  console.log(errorMessage)
-  TYPING_TEXT.innerHTML += errorMessage.charAt(start);
+  const text = 'Your score is : ' + score + '!';
+  TYPING_TEXT.innerHTML += text.charAt(start);
   start++;
   controlTimeOut = setTimeout(typeWriter, speedOFTyping);
   setTimeout(() => {
     clearTimeout(controlTimeOut);
     if (score < 50) {
-        TYPING_TEXT.innerHTML = 'Practice more!';
+        TYPING_TEXT.innerHTML = 'Need more practice =(';
     } else {
         TYPING_TEXT.innerHTML = 'Good job!!';
     }
