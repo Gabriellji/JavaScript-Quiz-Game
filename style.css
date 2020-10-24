@@ -28,9 +28,10 @@ body {
     align-items: center;
     background-color: #3D3BFF;
     height: 100vh;
-    background-image: url(./assets/tumblr_e97a90e92146ee85c0a1396fcbf4a378_4d7183fd_500.gif);
+    background-image: url(./assets/IllegalNewArrowcrab-size_restricted.gif);
     background-size: cover;
-    /* background-position: top; */
+    /* background-position-y: bottom; */
+    /* background-position-x: right; */
 }
 
 .wrapper {
@@ -39,6 +40,7 @@ body {
 }
 
 .pannel {
+    width: 1000px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -248,7 +250,7 @@ body {
 @media screen and (max-width: 420px) {
     .pannel {
         margin: 3rem 2rem;
-        height: 500px;
+        height: 440px;
         width: 300px;
     }
 
