@@ -6,6 +6,8 @@ const QUESTIONWRAP = document.querySelector('.question');
 const TYPING_TEXT_WRAP = document.querySelector('.final_score');
 const TYPING_TEXT = document.querySelector('.type_text');
 
+const FIREWALK_WRAP = document.querySelector('.pyro');
+
 const quizQuestions = [
     {
         question: 'Is javascript and java the same thing?',
@@ -121,10 +123,13 @@ BUTTONS.forEach((element) => {
             HIDDEN_WRAPS.forEach((element) => {
                 element.classList.add('hidden');
             })
+            FIREWALK_WRAP.classList.add('active');
             TYPING_TEXT_WRAP.classList.add('final_score_show');
             console.log(score)
-
             typeWriter();
+            setTimeout(() => {
+                FIREWALK_WRAP.classList.remove('active');
+            }, 9000);
             return;
         }
         let flag;

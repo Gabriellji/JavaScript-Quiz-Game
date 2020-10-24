@@ -32,29 +32,31 @@ body {
 }
 
 .pannel {
-    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 450px;
     margin: 4rem 7rem;
-    padding: 3rem;
+    padding-bottom: 4rem;
     background-color: white;
     box-shadow: 24px 25px 0px 1px rgba(0,0,0,1);
 }
 
 .question_wrap {
-    min-height: 300px;
-    margin: 1rem;
-    padding: 20px;
+    justify-content: center;
+    padding: 4rem 4rem;
 }
 
 .question {
+    display: flex;
+    flex-wrap: wrap;
     font-size: 30px;
     margin: 0;
-    padding: 45px;
 }
 
 .buttons_wrap {    
     display: flex;
     justify-content: space-evenly;
-    padding: 0 8rem;
 }
 
 .hidden {
@@ -156,3 +158,56 @@ body {
 	box-shadow: inset 4px 4px 0px 0px #E59400;
 }
 
+@media screen and (max-width: 970px) {
+    code {
+        font-size: 2vw;
+    }
+
+    .question {
+        display: unset;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    code {
+        font-size: 2vw;
+    }
+
+    .type_text {
+        font-size: 20px;
+    }
+
+    .pannel {
+        padding-bottom: 2rem;
+    }
+
+    .question {
+        display: unset;
+        font-size: 20px;
+    }
+
+    .eightbit-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .pannel {
+        height: fit-content;
+        margin: 4rem 2rem;
+        height: fit-content;
+        min-height: fit-content;
+    }
+
+    .question {
+        font-size: 10px;
+    }
+
+    .eightbit-btn {
+        font-size: 11px;
+        margin-left: 20px;
+        padding: 12px;
+        margin-right: 20px;
+    }
+}
