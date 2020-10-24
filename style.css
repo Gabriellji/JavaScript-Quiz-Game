@@ -38,15 +38,16 @@ body {
     box-shadow: 24px 25px 0px 1px rgba(0,0,0,1);
 }
 
-.question_wrap, .options_wrap {
-    min-height: 170px;
+.question_wrap {
+    min-height: 300px;
     margin: 1rem;
     padding: 20px;
 }
 
 .question {
-    font-size: 27px;
+    font-size: 30px;
     margin: 0;
+    padding: 45px;
 }
 
 .buttons_wrap {    
