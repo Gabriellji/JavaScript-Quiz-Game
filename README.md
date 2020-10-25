@@ -1,6 +1,6 @@
-### Git
+# Git
 
-***when you want to clone repo from GitHub webside***
+## when you want to clone repo from GitHub webside
 * go to github.com 
 * choose repo you want to clone and follow instructions from image
 ![Screenshot](./assets/readme-img/git.png)
@@ -23,7 +23,7 @@
 and check if there any folders. if yes, go there. and you should see 
 ![Screenshot](./assets/readme-img/term.png)
 
-***Create a branch***
+## Create a branch
 
 * run this code in your terminal
 ```diff
@@ -32,7 +32,8 @@ and check if there any folders. if yes, go there. and you should see
 it will automaticly created and move you there. Now you shoud see
 the name of your new branch at the end of the terminal line.
 
-***About pull requests***
+
+## About pull requests
 
 Pull requests let you tell others about changes you've pushed to a branch in a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch.
 
@@ -42,9 +43,11 @@ create pull request, when you ready to show your work and feel you can merge it 
 ![Screenshot](./assets/readme-img/pullreq.png)
 
 
-***Basic git flow to push your stuff into your branch***
 
-scheck all the changes
+
+## Basic git flow to push your stuff into your branch
+
+check all the changes
 ```diff
 +     git status
 ```
@@ -63,6 +66,7 @@ and finaly push it to the branch
 +     git push origin <name-of-your branch>
 ```
 
-***What Does git pull Do?***
+
+## What Does git pull Do?
 
 ### you can check it over [here](https://github.com/git-guides/git-pull) <3
