@@ -7,6 +7,8 @@ const FIREWALK_WRAP = document.querySelector('.pyro');
 
 const TYPING_TEXT = document.querySelector('.type_text');
 
+const SCORE_BOX = document.querySelector('.points');
+
 const quizQuestions = [
     {
         question: 'Is javascript and java the same thing?',
@@ -108,7 +110,7 @@ const typeWriter = () => {
   setTimeout(() => {
     clearTimeout(controlTimeOut);
     if (score < 50) {
-        TYPING_TEXT.innerHTML = 'Need more practice =(';
+        TYPING_TEXT.innerHTML = 'Practice more!';
     } else {
         TYPING_TEXT.innerHTML = 'Good job!!';
     }
@@ -116,6 +118,7 @@ const typeWriter = () => {
 }
 
 BUTTONS.forEach((element) => {
+    SCORE_BOX.innerHTML = 0;
     element.addEventListener('click', (e) => {
         if (currentQuestionIndex === quizQuestions.length - 1) {
             HIDDEN_WRAPS.forEach((element) => {
@@ -136,12 +139,14 @@ BUTTONS.forEach((element) => {
             let answer = returnCurrentQuiz(quizQuestions).isCorrect;
             if (isCorrectAnswer(flag, answer)) {
                 score+=10; 
+                SCORE_BOX.innerHTML = score;
             }
         } else {
             flag = false;
             let answer = returnCurrentQuiz(quizQuestions).isCorrect;
             if (isCorrectAnswer(flag, answer)) {
                 score+=10;
+                SCORE_BOX.innerHTML = score;
             }
         }
         currentQuestionIndex++;
