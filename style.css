@@ -52,9 +52,22 @@ body {
     box-shadow: 24px 25px 0px 1px rgba(0,0,0,1);
 }
 
+.score_desc {
+    padding: 1rem 7rem;
+    width: 1000px;
+    height: 50px;
+    position: absolute;
+    top: 7rem;
+}
+
+.score_desc_img {
+    width: 6%;
+}
+
 .score_wrap {
     padding: 0 4rem;
 }
+
 
 .question_wrap::before {
     content: '';
@@ -75,6 +88,11 @@ body {
     flex-wrap: wrap;
     font-size: 30px;
     margin: 0;
+}
+
+pre {
+    margin-bottom: 0;
+    width: 100%;
 }
 
 .buttons_wrap {    
@@ -104,6 +122,12 @@ body {
 .final_score_show {
     display: flex;
     justify-content: space-around;
+}
+
+.end-of-game_btn {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .eightbit-btn {
@@ -198,6 +222,10 @@ body {
          padding-bottom: 0;
     }
 
+    .score_desc {
+        top: 1rem;
+    }
+
     .score_wrap {
         position: absolute;
         padding: 0 4rem;
@@ -223,6 +251,15 @@ body {
         font-size: 2vw;
     }
 
+    .score_desc {
+        padding: 1rem 3rem;
+        top: 2.5rem;
+    }
+
+    .score_desc_img {
+        width: 3%;
+    }
+
     .question {
         display: unset;
     }
@@ -235,6 +272,10 @@ body {
 
     .type_text {
         font-size: 20px;
+    }
+
+    .score_desc_img {
+        width: 2.3%;
     }
 
     .pannel {
@@ -265,12 +306,23 @@ body {
         width: 300px;
     }
 
+    .score_desc {
+        top: 9.5rem;
+    }
+
     .question {
         font-size: 23px;
     }
 
     .question_wrap {
         padding: 0 2rem;
+    }
+    .score_wrap {
+        padding: 0 2rem;
+    }
+
+    .score_text {
+        font-size: 13px;
     }
 
     .eightbit-btn {
@@ -284,5 +336,9 @@ body {
 @media screen and (max-width: 340px) {
     .pannel {
         width: 285px;
+    }
+
+    .score_desc_img {
+        width: 1.8%;
     }
 }

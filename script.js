@@ -1,4 +1,4 @@
-const BUTTONS = document.querySelectorAll('.eightbit-btn');
+const BUTTONS = document.querySelectorAll('.mybutton');
 
 const HIDDEN_WRAPS = document.querySelectorAll('.hide');
 const QUESTIONWRAP = document.querySelector('.question');
@@ -8,6 +8,8 @@ const FIREWALK_WRAP = document.querySelector('.pyro');
 const TYPING_TEXT = document.querySelector('.type_text');
 
 const SCORE_BOX = document.querySelector('.points');
+
+const SCORE_DESC = document.querySelector('.score_desc');
 
 const quizQuestions = [
     {
@@ -31,7 +33,7 @@ const quizQuestions = [
         score: 0
     },
     {
-        question: "What will return <br><pre><code>document.write(NaN == NaN) ?</pre></code>",
+        question: "What will return <br><pre><code>document.write(NaN == NaN) ?</code></pre>",
         isCorrect: false,
         score: 0
     },
@@ -51,12 +53,17 @@ const quizQuestions = [
         score: 0
     },
     {
-        question: 'What will return <br><pre><code>document.write(String("Hello") == "Hello") ? </pre></code>',
+        question: 'What will return <br><pre><code>document.write(String("Hello") == "Hello") ? </code></pre>',
         isCorrect: true,
         score: 0
     },
     {
-        question: 'What will return <br><pre><code>document.write( 10 > 9 > 8 === true ) ? </pre></code>',
+        question: 'What will return <br><pre><code>document.write( 10 > 9 > 8 === true ) ? </code></pre>',
+        isCorrect: false,
+        score: 0
+    },
+    {
+        question: 'Are they equal <br><pre><code>‘123’ === 123 ?</code></pre>',
         isCorrect: false,
         score: 0
     },
@@ -66,12 +73,27 @@ const quizQuestions = [
         score: 0
     },
     {
-        question: 'What will return <br><pre><code>document.write(( true + false ) > 2 + true ) ? </pre></code>',
+        question: 'What will return <br><pre><code>document.write(( true + false ) > 2 + true ) ? </code></pre>',
         isCorrect: false,
         score: 0
     },
     {
-        question: 'What will return <br><pre><code>document.write(Number("1") - 1 == 0) ? </pre></code>',
+        question: 'What will return <br><pre><code>document.write(Number("1") - 1 == 0) ? </code></pre>',
+        isCorrect: true,
+        score: 0
+    },
+    {
+        question: 'Can we name a variable with numbers <br><pre><code>let 123 ?</code></pre>',
+        isCorrect: false,
+        score: 0
+    },
+    {
+        question: 'What will return <br><pre><code>!(!true) ?</code></pre>',
+        isCorrect: true,
+        score: 0
+    },
+    {
+        question: 'Are they equal <br><pre><code>‘123’ == 123 ?</code></pre>',
         isCorrect: true,
         score: 0
     },
@@ -96,6 +118,13 @@ const returnCurrentQuiz = (array) => {
 const isCorrectAnswer = (answer, correctAnswer) => {
     let res = answer === correctAnswer;
     return res;
+}
+
+const drawPixelHeart = () => {
+    const img = document.createElement('img');
+    img.classList.add('score_desc_img');
+    img.src = './assets/wite.png';
+    SCORE_DESC.appendChild(img);
 }
 
 let start = 0;
@@ -139,6 +168,7 @@ BUTTONS.forEach((element) => {
             let answer = returnCurrentQuiz(quizQuestions).isCorrect;
             if (isCorrectAnswer(flag, answer)) {
                 score+=10; 
+                drawPixelHeart();
                 SCORE_BOX.innerHTML = score;
             }
         } else {
@@ -146,6 +176,7 @@ BUTTONS.forEach((element) => {
             let answer = returnCurrentQuiz(quizQuestions).isCorrect;
             if (isCorrectAnswer(flag, answer)) {
                 score+=10;
+                drawPixelHeart();
                 SCORE_BOX.innerHTML = score;
             }
         }
