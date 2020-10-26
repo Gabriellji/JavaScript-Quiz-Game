@@ -138,7 +138,9 @@ const typeWriter = () => {
   controlTimeOut = setTimeout(typeWriter, speedOFTyping);
   setTimeout(() => {
     clearTimeout(controlTimeOut);
-    if (score < 50) {
+    if (score <= 30) {
+        TYPING_TEXT.innerHTML = 'It could be better...';
+    } else if (score < 80 && score > 30) {
         TYPING_TEXT.innerHTML = 'Practice more!';
     } else {
         TYPING_TEXT.innerHTML = 'Good job!!';
