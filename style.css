@@ -52,6 +52,10 @@ body {
     box-shadow: 24px 25px 0px 1px rgba(0,0,0,1);
 }
 
+.score_wrap {
+    padding: 0 4rem;
+}
+
 .question_wrap::before {
     content: '';
     position: absolute;
@@ -63,7 +67,7 @@ body {
 
 .question_wrap {
     justify-content: center;
-    padding: 4rem 4rem;
+    padding: 1rem 4rem;
 }
 
 .question {
@@ -84,6 +88,7 @@ body {
 
 .final_score {
     display: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 43px;
@@ -98,6 +103,7 @@ body {
 
 .final_score_show {
     display: flex;
+    justify-content: space-around;
 }
 
 .eightbit-btn {
@@ -192,6 +198,11 @@ body {
          padding-bottom: 0;
     }
 
+    .score_wrap {
+        position: absolute;
+        padding: 0 4rem;
+        top: 0;
+    }
     .question_wrap {
         padding: 0 4rem;
         height: 115px;

@@ -112,7 +112,7 @@ const typeWriter = () => {
     } else {
         TYPING_TEXT.innerHTML = 'Good job!!';
     }
-  }, 5000)
+  }, 3000)
 }
 
 BUTTONS.forEach((element) => {
