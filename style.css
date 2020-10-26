@@ -57,7 +57,7 @@ body {
     width: 1000px;
     height: 50px;
     position: absolute;
-    top: 7rem;
+    top: 11rem;
 }
 
 .score_desc_img {
@@ -223,7 +223,12 @@ pre {
     }
 
     .score_desc {
-        top: 1rem;
+        padding: 1rem 3rem;
+        top: 5rem;
+    }
+
+    .score_desc_img {
+        width: 5%;
     }
 
     .score_wrap {
@@ -253,7 +258,7 @@ pre {
 
     .score_desc {
         padding: 1rem 3rem;
-        top: 2.5rem;
+        top: 6.5rem;
     }
 
     .score_desc_img {
@@ -272,6 +277,10 @@ pre {
 
     .type_text {
         font-size: 20px;
+    }
+
+    .score_desc {
+        top: 9.5rem;
     }
 
     .score_desc_img {
@@ -307,7 +316,7 @@ pre {
     }
 
     .score_desc {
-        top: 9.5rem;
+        top: 13.5rem;
     }
 
     .question {
