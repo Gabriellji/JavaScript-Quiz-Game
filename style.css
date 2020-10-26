@@ -121,13 +121,15 @@ pre {
 
 .final_score_show {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .end-of-game_btn {
     display: flex;
+    position: absolute;
     width: 100%;
     justify-content: space-evenly;
+    bottom: 4rem;
 }
 
 .eightbit-btn {
@@ -255,6 +257,10 @@ pre {
     code {
         font-size: 2vw;
     }
+    
+    .end-of-game_btn {
+        bottom: 9.5rem;
+    }
 
     .score_desc {
         padding: 1rem 3rem;
@@ -277,6 +283,10 @@ pre {
 
     .type_text {
         font-size: 20px;
+    }
+
+    .end-of-game_btn {
+        bottom: 8.2rem;
     }
 
     .score_desc {
@@ -313,6 +323,10 @@ pre {
         margin: 3rem 2rem;
         height: 440px;
         width: 300px;
+    }
+
+    .end-of-game_btn {
+        bottom: 6rem;
     }
 
     .score_desc {
