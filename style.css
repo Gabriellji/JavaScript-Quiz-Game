@@ -28,7 +28,7 @@ body {
     align-items: center;
     background-color: #3D3BFF;
     height: 100vh;
-    background-image: url(./assets/IllegalNewArrowcrab-size_restricted.gif);
+    background-image: url(./assets/gif/IllegalNewArrowcrab-size_restricted.gif);
     background-size: cover;
     /* background-position-y: bottom; */
     /* background-position-x: right; */
@@ -81,7 +81,7 @@ body {
     top: 3rem;
     left: 0px;
     width: 100%;
-    border-bottom: 4px solid black;
+    border-bottom: 3px solid black;
 }
 
 .question_wrap {

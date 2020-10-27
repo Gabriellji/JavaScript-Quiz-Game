@@ -108,13 +108,6 @@ const returnCurrentQuiz = (array) => {
     return array[currentQuestionIndex];
 }
 
-//const currentQuestion = returnCurrentQuiz(quizQuestions).question;
-
-// const TRUE_BUTTON = document.querySelector('.true');
-
-// const FALSE_BUTTON = document.querySelector('.false');
-
-
 const isCorrectAnswer = (answer, correctAnswer) => {
     let res = answer === correctAnswer;
     return res;
@@ -123,7 +116,7 @@ const isCorrectAnswer = (answer, correctAnswer) => {
 const drawPixelHeart = () => {
     const img = document.createElement('img');
     img.classList.add('score_desc_img');
-    img.src = './assets/pixel-heart.png';
+    img.src = './assets/img/pixel-heart.png';
     SCORE_DESC.appendChild(img);
 }
 
@@ -146,13 +139,13 @@ const typeWriter = () => {
   setTimeout(() => {
     clearTimeout(controlTimeOut);
     if (score <= 30) {
-        //playMusic('./assets/lose.wav');
+        //playMusic('./assets/audio/lose.wav');
         TYPING_TEXT.innerHTML = 'It could be better...';
     } else if (score < 80 && score > 30) {
-        //playMusic('./assets/mid.wav');
+        //playMusic('./assets/audio/mid.wav');
         TYPING_TEXT.innerHTML = 'Practice more!';
     } else {
-        //playMusic('./assets/win.wav');
+        //playMusic('./assets/audio/win.wav');
         TYPING_TEXT.innerHTML = 'Good job!!';
     }
   }, 3000)
@@ -161,14 +154,14 @@ const typeWriter = () => {
 BUTTONS.forEach((element) => {
     SCORE_BOX.innerHTML = 0;
     element.addEventListener('click', (e) => {
-        playMusic('./assets/button-sound.wav');
+        playMusic('./assets/audio/button-sound.wav');
         if (currentQuestionIndex === quizQuestions.length - 1) {
             HIDDEN_WRAPS.forEach((element) => {
                 element.classList.add('hidden');
             })
             FIREWALK_WRAP.classList.add('active');
             TYPING_TEXT_WRAP.classList.add('final_score_show');
-            playMusic('./assets/win.wav');
+            playMusic('./assets/audio/win.wav');
             typeWriter();
             setTimeout(() => {
                 FIREWALK_WRAP.classList.remove('active');
@@ -199,4 +192,3 @@ BUTTONS.forEach((element) => {
 
 })
 
-//console.log(quizQuestions[0]['question'])
