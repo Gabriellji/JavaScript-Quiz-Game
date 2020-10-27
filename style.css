@@ -57,7 +57,7 @@ body {
     width: 1000px;
     height: 50px;
     position: absolute;
-    top: 11rem;
+    top: 8rem;
 }
 
 .score_desc_img {
@@ -226,7 +226,7 @@ pre {
 
     .score_desc {
         padding: 1rem 3rem;
-        top: 5rem;
+        top: 2rem;
     }
 
     .score_desc_img {
@@ -264,7 +264,7 @@ pre {
 
     .score_desc {
         padding: 1rem 3rem;
-        top: 6.5rem;
+        top: 3.5rem;
     }
 
     .score_desc_img {
@@ -290,7 +290,7 @@ pre {
     }
 
     .score_desc {
-        top: 9.5rem;
+        top: 6.5rem;
     }
 
     .score_desc_img {
@@ -330,7 +330,7 @@ pre {
     }
 
     .score_desc {
-        top: 13.5rem;
+        top: 10.5rem;
     }
 
     .question {
