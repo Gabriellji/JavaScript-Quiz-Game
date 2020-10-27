@@ -123,8 +123,15 @@ const isCorrectAnswer = (answer, correctAnswer) => {
 const drawPixelHeart = () => {
     const img = document.createElement('img');
     img.classList.add('score_desc_img');
-    img.src = './assets/wite.png';
+    img.src = './assets/pixel-heart.png';
     SCORE_DESC.appendChild(img);
+}
+
+let music = new Audio();
+const playMusic = (file) => {
+    music.pause();
+    music = new Audio(file);
+    music.play();
 }
 
 let start = 0;
@@ -139,10 +146,13 @@ const typeWriter = () => {
   setTimeout(() => {
     clearTimeout(controlTimeOut);
     if (score <= 30) {
+        //playMusic('./assets/lose.wav');
         TYPING_TEXT.innerHTML = 'It could be better...';
     } else if (score < 80 && score > 30) {
+        //playMusic('./assets/mid.wav');
         TYPING_TEXT.innerHTML = 'Practice more!';
     } else {
+        //playMusic('./assets/win.wav');
         TYPING_TEXT.innerHTML = 'Good job!!';
     }
   }, 3000)
@@ -151,13 +161,14 @@ const typeWriter = () => {
 BUTTONS.forEach((element) => {
     SCORE_BOX.innerHTML = 0;
     element.addEventListener('click', (e) => {
+        playMusic('./assets/button-sound.wav');
         if (currentQuestionIndex === quizQuestions.length - 1) {
             HIDDEN_WRAPS.forEach((element) => {
                 element.classList.add('hidden');
             })
             FIREWALK_WRAP.classList.add('active');
             TYPING_TEXT_WRAP.classList.add('final_score_show');
-            console.log(score)
+            playMusic('./assets/win.wav');
             typeWriter();
             setTimeout(() => {
                 FIREWALK_WRAP.classList.remove('active');

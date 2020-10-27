@@ -46,26 +46,32 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 450px;
-    margin: 0 7rem;
+    /* margin: 0 7rem; */
     padding-bottom: 4rem;
     background-color: white;
     box-shadow: 24px 25px 0px 1px rgba(0,0,0,1);
 }
 
 .score_desc {
-    padding: 1rem 7rem;
-    width: 1000px;
-    height: 50px;
-    position: absolute;
-    top: 8rem;
+    width: 100%;
+    padding: 5px;
 }
 
 .score_desc_img {
     width: 6%;
 }
 
+.points {
+    display: none;
+}
+
 .score_wrap {
     padding: 0 4rem;
+    display: flex;
+}
+
+.score_text {
+    min-width: fit-content;
 }
 
 
@@ -225,12 +231,11 @@ pre {
     }
 
     .score_desc {
-        padding: 1rem 3rem;
-        top: 2rem;
+        padding: 0.6rem 0 0 1rem;
     }
 
     .score_desc_img {
-        width: 5%;
+        width: 7%;
     }
 
     .score_wrap {
@@ -241,6 +246,10 @@ pre {
     .question_wrap {
         padding: 0 4rem;
         height: 115px;
+    }
+
+    .question {
+        font-size: 24px;
     }
 }
 
@@ -262,9 +271,12 @@ pre {
         bottom: 9.5rem;
     }
 
+    .points {
+        display: unset;
+    }
+
     .score_desc {
-        padding: 1rem 3rem;
-        top: 3.5rem;
+        display: none;
     }
 
     .score_desc_img {
@@ -287,14 +299,6 @@ pre {
 
     .end-of-game_btn {
         bottom: 8.2rem;
-    }
-
-    .score_desc {
-        top: 7.5rem;
-    }
-
-    .score_desc_img {
-        width: 2.3%;
     }
 
     .pannel {
@@ -328,10 +332,6 @@ pre {
         bottom: 6rem;
     }
 
-    .score_desc {
-        top: 11rem;
-    }
-
     .question {
         font-size: 23px;
     }
@@ -358,13 +358,5 @@ pre {
 @media screen and (max-width: 340px) {
     .pannel {
         width: 285px;
-    }
-
-    .score_desc {
-        top: 11.5rem;
-        }
-
-    .score_desc_img {
-        width: 1.8%;
     }
 }
