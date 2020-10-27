@@ -290,7 +290,7 @@ pre {
     }
 
     .score_desc {
-        top: 6.5rem;
+        top: 7.5rem;
     }
 
     .score_desc_img {
@@ -329,7 +329,7 @@ pre {
     }
 
     .score_desc {
-        top: 10.5rem;
+        top: 11rem;
     }
 
     .question {
@@ -359,6 +359,10 @@ pre {
     .pannel {
         width: 285px;
     }
+
+    .score_desc {
+        top: 11.5rem;
+        }
 
     .score_desc_img {
         width: 1.8%;
