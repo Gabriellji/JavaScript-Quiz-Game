@@ -1,0 +1,47 @@
+
+/* COMMON RULES */
+* {
+    padding: 20;
+    margin: 20;
+    box-sizing: Border-box;
+} 
+
+.h2 {
+    color: midnightblue;
+    border: 1px solid;
+    margin: 0;
+    padding: 30px;
+    text-align: center;
+    margin: 20px;
+}
+
+/* NAVBAR */
+.navigation {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    border: 1px solid black;
+}
+
+.navigation li {
+    list-style: none;
+}
+
+a {
+    color: black;
+    font-size: 20px;
+    transform: uppercase;
+}
+
+/* MAIN PART */
+.main {
+    border: 1px solid black;
+    margin: 20px;
+}
+
+
+.play_again {
+    border: 1px solid black;
+    margin: 20px;
+
+}
