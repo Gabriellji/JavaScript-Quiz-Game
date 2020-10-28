@@ -292,11 +292,28 @@ body {
         padding: .5rem;
         text-transform: uppercase;
         width: 100px;
+       
         
     }
  .start-btn:hover {
             background: #BCBCBC;
         }
-    
 
+ .characters {
+     display: flex;
+     justify-content: space-between;
+     margin: 0;
+     
+ }
+
+ a:hover {
+    opacity: 50%;
+ }
+
+
+
+ 
+
+
+ 
     
