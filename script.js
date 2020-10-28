@@ -100,6 +100,7 @@ const quizQuestions = [
 ];
 
 QUESTIONWRAP.innerHTML = quizQuestions[0].question;
+SCORE_BOX.innerHTML = 0;
 
 let score = 0;
 let currentQuestionIndex = 0;
@@ -139,20 +140,16 @@ const typeWriter = () => {
   setTimeout(() => {
     clearTimeout(controlTimeOut);
     if (score <= 30) {
-        //playMusic('./assets/audio/lose.wav');
         TYPING_TEXT.innerHTML = 'It could be better...';
     } else if (score < 80 && score > 30) {
-        //playMusic('./assets/audio/mid.wav');
         TYPING_TEXT.innerHTML = 'Practice more!';
     } else {
-        //playMusic('./assets/audio/win.wav');
         TYPING_TEXT.innerHTML = 'Good job!!';
     }
   }, 3000)
 }
 
 BUTTONS.forEach((element) => {
-    SCORE_BOX.innerHTML = 0;
     element.addEventListener('click', (e) => {
         playMusic('./assets/audio/button-sound.wav');
         if (currentQuestionIndex === quizQuestions.length - 1) {
@@ -161,8 +158,14 @@ BUTTONS.forEach((element) => {
             })
             FIREWALK_WRAP.classList.add('active');
             TYPING_TEXT_WRAP.classList.add('final_score_show');
-            playMusic('./assets/audio/win.wav');
             typeWriter();
+                if (score <= 30) {
+                    playMusic('./assets/audio/lose.wav');
+                } else if (score < 80 && score > 30) {
+                    playMusic('./assets/audio/mid.wav');
+                } else {
+                    playMusic('./assets/audio/win.wav');
+                }
             setTimeout(() => {
                 FIREWALK_WRAP.classList.remove('active');
             }, 9000);
