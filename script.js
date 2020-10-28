@@ -1,16 +1,28 @@
-const BUTTONS = document.querySelectorAll('.mybutton');
+// an array of all <button> with a class 'mybutton'
+const BUTTONS = document.querySelectorAll('.mybutton'); // [ button, button, ....]
 
-const HIDDEN_WRAPS = document.querySelectorAll('.hide');
+// an array of <div> that i want to show/hide at the end of the game
+const HIDDEN_WRAPS = document.querySelectorAll('.hide'); // [div, div, ...]
+
+// <p> that contains question
 const QUESTIONWRAP = document.querySelector('.question');
+
+// <div> that contains <p> with the text of final score at the end of the game
 const TYPING_TEXT_WRAP = document.querySelector('.final_score');
+
+// <div> that contains firework elements
 const FIREWALK_WRAP = document.querySelector('.pyro');
 
+// <p> that will contains typing text when I call function typeWriter() see line 145
 const TYPING_TEXT = document.querySelector('.type_text');
 
+// <span> that contains score points
 const SCORE_BOX = document.querySelector('.points');
 
+// <div> that will contains pixel hearts when I call function drawPixelHeart() see line 128
 const SCORE_DESC = document.querySelector('.score_desc');
 
+// an array of objects with quiz data 
 const quizQuestions = [
     {
         question: 'Is javascript and java the same thing?',
@@ -99,21 +111,30 @@ const quizQuestions = [
     },
 ];
 
+// it place start index of questions from array with data above
 QUESTIONWRAP.innerHTML = quizQuestions[0].question;
+
+//it place score index 0
 SCORE_BOX.innerHTML = 0;
 
+// a variable that will keep curent score
 let score = 0;
+
+// a variable that will keep curent index of question
 let currentQuestionIndex = 0;
 
+// a function that return current question from the array. I call it on 196, 204, 212 line
 const returnCurrentQuiz = (array) => {
     return array[currentQuestionIndex];
 }
 
+// a function that compare user answer and real answer of the question. I call it on 198, 206 line
 const isCorrectAnswer = (answer, correctAnswer) => {
     let res = answer === correctAnswer;
     return res;
 }
 
+// a function that draw pixel hearts if the answer is correct. I call it on 201, 209 line
 const drawPixelHeart = () => {
     const img = document.createElement('img');
     img.classList.add('score_desc_img');
@@ -121,22 +142,35 @@ const drawPixelHeart = () => {
     SCORE_DESC.appendChild(img);
 }
 
+// a variable that keep a specific function that calls Class (we gonna learn it soon)
 let music = new Audio();
+
+// a function that plays audio.
+// If user keep clicking super fast it will never lagging because of methods inside of function.
+// You can google it =))
+// I call it on 182, 191, 193, 195 line
 const playMusic = (file) => {
     music.pause();
     music = new Audio(file);
     music.play();
 }
 
+// a variable that keeps start index for typeWriter function. See below
 let start = 0;
+
+// a variable that will have a value later. See 169 line.
+// It does not have any value now
 let controlTimeOut;
 
+// a function that animate text as typing text. I call it on 195 line
 const typeWriter = () => {
   const speedOFTyping = 90;
   const text = 'Your score is : ' + score + '!';
   TYPING_TEXT.innerHTML += text.charAt(start);
   start++;
   controlTimeOut = setTimeout(typeWriter, speedOFTyping);
+  // a function that works asynchronously. It means that everything inside this function
+  // will happend only after some time. See time on 183 line
   setTimeout(() => {
     clearTimeout(controlTimeOut);
     if (score <= 30) {
@@ -149,16 +183,27 @@ const typeWriter = () => {
   }, 3000)
 }
 
+// for array of buttons (see line 2) I use method 'forEach', 
+// that will use logic inside for each button in array
 BUTTONS.forEach((element) => {
+    // for each button i add event listener click
     element.addEventListener('click', (e) => {
+        // adding audio for each click by calling specific function. See line 152
+        // and add real argument
         playMusic('./assets/audio/button-sound.wav');
+        // condition below checks the lens of array with questions. 
         if (currentQuestionIndex === quizQuestions.length - 1) {
+            // if TRUE, it hides block with questions (display: none)
             HIDDEN_WRAPS.forEach((element) => {
                 element.classList.add('hidden');
             })
+            // then adds class to block with firework (display: flex, before that it was none)
             FIREWALK_WRAP.classList.add('active');
+            // adds class to show a block with final score at the end
             TYPING_TEXT_WRAP.classList.add('final_score_show');
+            // call function with animated text. See line 166
             typeWriter();
+            // codition that checks score and depens of it plays different type of audio
                 if (score <= 30) {
                     playMusic('./assets/audio/lose.wav');
                 } else if (score < 80 && score > 30) {
@@ -166,12 +211,16 @@ BUTTONS.forEach((element) => {
                 } else {
                     playMusic('./assets/audio/win.wav');
                 }
+            // one more asynchronous function. See description on 172 line
             setTimeout(() => {
                 FIREWALK_WRAP.classList.remove('active');
             }, 9000);
             return;
         }
+        // just a variable that will keep needed value below
         let flag;
+        // condition that check which button was clicked and
+        // depens of it will add score / pixel hearts
         if(e.target.classList.contains('true')) {
             flag = true;
             let answer = returnCurrentQuiz(quizQuestions).isCorrect;
@@ -189,6 +238,7 @@ BUTTONS.forEach((element) => {
                 SCORE_BOX.innerHTML = score;
             }
         }
+        // incrementing current index of ouestions that makes me able to show them one by one
         currentQuestionIndex++;
         QUESTIONWRAP.innerHTML = returnCurrentQuiz(quizQuestions).question;
     })
