@@ -27,87 +27,70 @@ const quizQuestions = [
     {
         question: 'Is javascript and java the same thing?',
         isCorrect: false,
-        score: 0
     },
     {
         question: 'Did Michael Jackson invent Java Script?',
         isCorrect: false,
-        score: 0
     },
     {
         question: 'Can JS be used for front end and back end?',
         isCorrect: true,
-        score: 0
     },
     {
         question: 'Can we reassign const variable?',
         isCorrect: false,
-        score: 0
     },
     {
         question: "What will return <br><pre><code>document.write(NaN == NaN) ?</code></pre>",
         isCorrect: false,
-        score: 0
     },
     {
         question: 'Is undefined a data type?',
         isCorrect: true,
-        score: 0
     },
     {
         question: 'Can we multyplay a string with a number?',
         isCorrect: false,
-        score: 0
     },
     {
         question: 'Is JavaScript case-sensitive?',
         isCorrect: true,
-        score: 0
     },
     {
         question: 'What will return <br><pre><code>document.write(String("Hello") == "Hello") ? </code></pre>',
         isCorrect: true,
-        score: 0
     },
     {
         question: 'What will return <br><pre><code>document.write( 10 > 9 > 8 === true ) ? </code></pre>',
         isCorrect: false,
-        score: 0
     },
     {
         question: 'Are they equal <br><pre><code>‘123’ === 123 ?</code></pre>',
         isCorrect: false,
-        score: 0
     },
     {
         question: 'All keys in an object are strings.',
         isCorrect: true,
-        score: 0
     },
     {
         question: 'What will return <br><pre><code>document.write(( true + false ) > 2 + true ) ? </code></pre>',
         isCorrect: false,
-        score: 0
     },
     {
         question: 'What will return <br><pre><code>document.write(Number("1") - 1 == 0) ? </code></pre>',
         isCorrect: true,
-        score: 0
     },
     {
         question: 'Can we name a variable with numbers <br><pre><code>let 123 ?</code></pre>',
         isCorrect: false,
-        score: 0
     },
     {
         question: 'What will return <br><pre><code>!(!true) ?</code></pre>',
         isCorrect: true,
-        score: 0
     },
     {
         question: 'Are they equal <br><pre><code>‘123’ == 123 ?</code></pre>',
         isCorrect: true,
-        score: 0
     },
 ];
 
