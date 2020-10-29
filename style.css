@@ -151,7 +151,9 @@ body {
     }
 }
 
-
+.btn-container {
+    display: none;
+}
 
 .start-btn {
         background: #7C7C7C;
