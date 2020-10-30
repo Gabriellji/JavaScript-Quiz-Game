@@ -148,10 +148,20 @@ const VIET_POWER = document.querySelector('.viet_power');
 const TIP_WRAP = document.querySelector('.tip_wrap');
 const TIP_TEXT = document.querySelector('.tip_text');
 
+const SCORE_BUST = document.querySelector('.score_bust');
+const SCORE_BUST_TEXT = document.querySelector('.score_bust_text');
+
+const ONE_SECOND_DIV = document.querySelector('.one_second');
+
+//const coin = document.querySelector(".coin");
+
+
 CHARACTERS_BUTTONS.forEach((button) => {
     button.addEventListener('click', (e) => {
         if(e.target.classList.contains('viet')) {
             VIET_POWER.classList.add('show-power');
+        } else if (e.target.classList.contains('nadine')) {
+            SCORE_BUST.classList.add('show-bust');
         }
     })
 })
@@ -185,6 +195,8 @@ BUTTONS.forEach((element) => {
             }, 9000);
             return;
         }
+
+
         ANSWER_BUTTONS.forEach((btn) => {
             btn.addEventListener('click', (el) => {
                 el.target.classList.add('hidden');
@@ -193,11 +205,27 @@ BUTTONS.forEach((element) => {
                 setTimeout(() => { TIP_WRAP.classList.remove('show-tip') }, 2000);
             })
         })
+
+
         let flag;
         if(e.target.classList.contains('true')) {
             flag = true;
             let answer = returnCurrentQuiz(quizQuestions).isCorrect;
             if (isCorrectAnswer(flag, answer)) {
+                if ((currentQuestionIndex + 1) % 4 === 0) {
+                    console.log('gettt')
+                    SCORE_BUST_TEXT.classList.add('show-bust');
+                    SCORE_BUST_TEXT.addEventListener('click', () => {
+                        ONE_SECOND_DIV.classList.add('fade-in-fwd');
+                        score+=10;
+                        drawPixelHeart();
+                        SCORE_BOX.innerHTML = score;
+                        SCORE_BUST_TEXT.classList.remove('show-bust');
+                    })
+                    setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
+                    setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
+                    //setTimeout(() => { SCORE_BUST_TEXT.classList.remove('show-bust') },2000);
+                }
                 score+=10; 
                 drawPixelHeart();
                 SCORE_BOX.innerHTML = score;
@@ -206,6 +234,19 @@ BUTTONS.forEach((element) => {
             flag = false;
             let answer = returnCurrentQuiz(quizQuestions).isCorrect;
             if (isCorrectAnswer(flag, answer)) {
+                if ((currentQuestionIndex + 1) % 4 === 0) {
+                    SCORE_BUST_TEXT.classList.add('show-bust');
+                    console.log(score)
+                    SCORE_BUST_TEXT.addEventListener('click', () => {
+                        ONE_SECOND_DIV.classList.add('fade-in-fwd');
+                        score+=10;
+                        drawPixelHeart();
+                        SCORE_BOX.innerHTML = score;
+                        SCORE_BUST_TEXT.classList.remove('show-bust');
+                    })
+                    setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
+                    setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
+                }
                 score+=10;
                 drawPixelHeart();
                 SCORE_BOX.innerHTML = score;
