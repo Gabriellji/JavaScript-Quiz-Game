@@ -6,6 +6,7 @@
     <title>JS Quiz Game</title>
     <link rel="stylesheet" href="./style.quiz.css">
     <link rel="stylesheet" href="./firewalk.css">
+    <link rel="stylesheet" href="./message.css">
 </head>
 <body>
     <header class="header">
@@ -19,11 +20,21 @@
         </div>
     </header>
     <main class="main">
+        <div class="last_score">
+            <p>
+                YOUR LAST SCORE: <span class="last">YOU HAVE NOT PLAYED YET..</span>
+            </p>
+        </div>
         <section class="section">
             <div class="wrapper">
                 <div class="pyro">
                     <div class="before"></div>
                     <div class="after"></div>
+                </div>
+                <div class="message_wrap">
+                <div id="speech-bubble">
+                    <p class="message_text"></p> 
+                  </div>
                 </div>
                 <div class="main_panel">
                 <div class="pannel">

@@ -22,6 +22,20 @@ const SCORE_BOX = document.querySelector('.points');
 // <div> that will contains pixel hearts when I call function drawPixelHeart() see line 128
 const SCORE_DESC = document.querySelector('.score_desc');
 
+const SPECH_BUBLE = document.querySelector('.message_wrap');
+const MESSAGE = document.querySelector('.message_text');
+
+const LAST_SCORE = document.querySelector('.last');
+
+// if(!window.localStorage.hash) {
+//     LAST_SCORE.innerHTML = 'YOU HAVE NOT PLAYED YET...';
+// }
+
+var userStringFromLocalStorage = localStorage.getItem('userScore');
+
+LAST_SCORE.innerHTML = userStringFromLocalStorage;
+
+
 // an array of objects with quiz data 
 const quizQuestions = [
     {
@@ -100,9 +114,8 @@ QUESTIONWRAP.innerHTML = quizQuestions[0].question;
 //it place score index 0
 SCORE_BOX.innerHTML = 0;
 
-// a variable that will keep curent score
+// // a variable that will keep curent score
 let score = 0;
-
 // a variable that will keep curent index of question
 let currentQuestionIndex = 0;
 
@@ -156,13 +169,6 @@ const typeWriter = () => {
   // will happend only after some time. See time on 183 line
   setTimeout(() => {
     clearTimeout(controlTimeOut);
-    if (score <= 30) {
-        TYPING_TEXT.innerHTML = 'It could be better...';
-    } else if (score < 80 && score > 30) {
-        TYPING_TEXT.innerHTML = 'Practice more!';
-    } else {
-        TYPING_TEXT.innerHTML = 'Good job!!';
-    }
   }, 3000)
 }
 
@@ -174,7 +180,8 @@ BUTTONS.forEach((element) => {
         // adding audio for each click by calling specific function. See line 152
         // and add real argument
         playMusic('./assets/audio/button-sound.wav');
-        // condition below checks the lens of array with questions. 
+        // condition below checks the lens of array with questions.
+        LAST_SCORE.innerHTML = ''; 
         if (currentQuestionIndex === quizQuestions.length - 1) {
             // if TRUE, it hides block with questions (display: none)
             HIDDEN_WRAPS.forEach((element) => {
@@ -185,14 +192,19 @@ BUTTONS.forEach((element) => {
             // adds class to show a block with final score at the end
             TYPING_TEXT_WRAP.classList.add('final_score_show');
             // call function with animated text. See line 166
+            SPECH_BUBLE.classList.add('show-message_wrap');
             typeWriter();
+            window.localStorage.setItem('userScore', score);
             // codition that checks score and depens of it plays different type of audio
                 if (score <= 30) {
                     playMusic('./assets/audio/lose.wav');
+                    MESSAGE.innerHTML = 'It could be better...';
                 } else if (score < 80 && score > 30) {
                     playMusic('./assets/audio/mid.wav');
+                    MESSAGE.innerHTML = 'Practice more!';
                 } else {
                     playMusic('./assets/audio/win.wav');
+                    MESSAGE.innerHTML = 'Good job!!';
                 }
             // one more asynchronous function. See description on 172 line
             setTimeout(() => {
@@ -225,6 +237,10 @@ BUTTONS.forEach((element) => {
         currentQuestionIndex++;
         QUESTIONWRAP.innerHTML = returnCurrentQuiz(quizQuestions).question;
     })
-
+    
 })
+
+
+
+
 
