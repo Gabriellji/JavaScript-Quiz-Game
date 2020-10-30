@@ -1,10 +1,15 @@
 
 /* COMMON RULES */
-* {
-    padding: 20;
-    margin: 20;
-    box-sizing: Border-box;
-} 
+
+@font-face {
+    font-family: "bit-font";
+    src: url('./fonts/gamegirlclassic-9mvj-webfont.woff2') format("woff2"),
+           url("./fonts/gamegirlclassic-9mvj-webfont.woff") format("woff");
+   }
+
+*,*:before,*:after {
+    box-sizing: border-box;
+}
 
 .h2 {
     color: midnightblue;
@@ -35,8 +40,14 @@ a {
 
 /* MAIN PART */
 .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3D3BFF;
     border: 1px solid black;
-    margin: 20px;
+    height: 100vh;
+    background-image: url(./assets/gif/5.gif);
+    background-size: cover;
 }
 
 
