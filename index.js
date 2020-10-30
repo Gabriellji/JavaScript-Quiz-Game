@@ -21,6 +21,8 @@ const LAST_SCORE = document.querySelector('.last');
 
 const userStringFromLocalStorage = localStorage.getItem('userScore');
 
+CHARACTERS_BUTTONS = document.querySelectorAll('.power');
+
 LAST_SCORE.innerHTML = userStringFromLocalStorage;
 
 const quizQuestions = [
@@ -138,6 +140,24 @@ const typeWriter = () => {
   }, 3000)
 }
 
+
+ANSWER_BUTTONS = document.querySelectorAll('.tip');
+
+const VIET_POWER = document.querySelector('.viet_power');
+
+const TIP_WRAP = document.querySelector('.tip_wrap');
+const TIP_TEXT = document.querySelector('.tip_text');
+
+CHARACTERS_BUTTONS.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        if(e.target.classList.contains('viet')) {
+            VIET_POWER.classList.add('show-power');
+        }
+    })
+})
+
+
+
 BUTTONS.forEach((element) => {
     element.addEventListener('click', (e) => {
         playMusic('./assets/audio/button-sound.wav');
@@ -165,6 +185,14 @@ BUTTONS.forEach((element) => {
             }, 9000);
             return;
         }
+        ANSWER_BUTTONS.forEach((btn) => {
+            btn.addEventListener('click', (el) => {
+                el.target.classList.add('hidden');
+                TIP_WRAP.classList.add('show-tip');
+                TIP_TEXT.innerHTML = returnCurrentQuiz(quizQuestions).isCorrect;
+                setTimeout(() => { TIP_WRAP.classList.remove('show-tip') }, 2000);
+            })
+        })
         let flag;
         if(e.target.classList.contains('true')) {
             flag = true;
@@ -188,8 +216,3 @@ BUTTONS.forEach((element) => {
     })
     
 })
-
-
-
-
-

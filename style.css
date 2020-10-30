@@ -367,3 +367,34 @@ pre {
         width: 285px;
     }
 }
+
+.btn {
+    position: absolute;
+    top: 1rem;
+}
+
+.power {
+    font-size: 25px;
+    padding: 10px;
+}
+
+.viet_power {
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+}
+
+.tip_wrap {
+    position: absolute;
+    display: none;
+    top: 4rem;
+    left: 2rem; 
+    width: 100px;
+    background-color: tomato;
+    color: black;
+    font-size: 15px;
+}
+
+.show-tip {
+    display: unset;
+}
