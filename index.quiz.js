@@ -31,7 +31,7 @@ const LAST_SCORE = document.querySelector('.last');
 //     LAST_SCORE.innerHTML = 'YOU HAVE NOT PLAYED YET...';
 // }
 
-var userStringFromLocalStorage = localStorage.getItem('userScore');
+const userStringFromLocalStorage = localStorage.getItem('userScore');
 
 LAST_SCORE.innerHTML = userStringFromLocalStorage;
 
@@ -181,7 +181,6 @@ BUTTONS.forEach((element) => {
         // and add real argument
         playMusic('./assets/audio/button-sound.wav');
         // condition below checks the lens of array with questions.
-        LAST_SCORE.innerHTML = ''; 
         if (currentQuestionIndex === quizQuestions.length - 1) {
             // if TRUE, it hides block with questions (display: none)
             HIDDEN_WRAPS.forEach((element) => {
