@@ -1,0 +1,175 @@
+@font-face {
+    font-family: "bit-font";
+    src: url('./fonts/gamegirlclassic-9mvj-webfont.woff2') format("woff2"),
+           url("./fonts/gamegirlclassic-9mvj-webfont.woff") format("woff");
+   }
+
+*,*:before,*:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "bit-font";
+    padding: 0;
+    margin: 0;
+    background-color: #3D3BFF;
+}
+
+.header {
+    display: none;
+    border-bottom: 1px solid black;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #3D3BFF; */
+    height: 100vh;
+    background-image: url('./assets/tumblr_e97a90e92146ee85c0a1396fcbf4a378_4d7183fd_500.gif');
+    background-size: cover;
+   
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+.pannel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 450px;
+    margin: 0 7rem;
+    padding-bottom: 4rem;
+    background-color: white;
+    box-shadow: 24px 25px 0px 1px rgba(0,0,0,1);
+}
+
+.message_wrap::before {
+    content: '';
+    position: absolute;
+    top: 3rem;
+    left: 0px;
+    width: 100%;
+    border-bottom: 4px solid black;
+}
+
+.message_wrap {
+    justify-content: center;
+    padding: 4rem 4rem;
+}
+
+
+
+
+ .start-btn:hover {
+            background: #BCBCBC;
+        }
+
+ .characters {
+     display: flex;
+     justify-content: space-around;
+     margin: 0;
+     
+ }
+
+ img:hover {
+    opacity: 50%;
+ }
+
+
+ @media only screen and (min-width: 600px) and (max-width: 1023px) {
+    .characters {
+        flex-wrap: wrap;
+    }
+    .pic {
+        width: 150px;
+    }
+  }
+
+
+  @media screen and (max-width: 1600px ) {
+    .pannel {
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .pannel {
+         height: 650px;
+         width: 780px;
+         justify-content: space-evenly;
+         margin: 4rem 2rem;
+         padding-bottom: 0;
+    }
+
+    .message_wrap {
+        padding: 0 4rem;
+        height: 115px;
+    }
+}
+
+
+@media screen and (max-width: 970px) {
+    .header {
+        height: 50px;
+    }
+
+    .pannel {
+        width: 500px;
+  
+   }
+    code {
+        font-size: 2vw;
+    }
+
+    /* .message {
+        display: unset;
+    } */
+}
+
+@media screen and (max-width: 570px) {
+    code {
+        font-size: 2.5vw;
+    }
+
+    .type_text {
+        font-size: 20px;
+    }
+
+    .pannel {
+        height: 550px;
+        width: 370px;
+    }
+
+    .message {
+        padding: 0 2rem;
+    }
+
+    
+}
+
+
+ @media screen and (max-width: 320px) {
+    .message {
+        font-size: 15px;
+    }
+    .pannel {
+        width: 285px;
+    }
+    
+    .characters {
+        display: flex;
+        
+    }
+    .pic {
+        width: 100px;
+    }
+}
+
+
+ 
+    
