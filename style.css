@@ -407,6 +407,7 @@ pre {
 
 .score_bust {
     position: absolute;
+    display: none;
     top: 2rem;
     right: 3rem;
 }
