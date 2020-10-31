@@ -1,6 +1,3 @@
-
-/* COMMON RULES */
-
 @font-face {
     font-family: "bit-font";
     src: url('./fonts/gamegirlclassic-9mvj-webfont.woff2') format("woff2"),
@@ -11,53 +8,199 @@
     box-sizing: border-box;
 }
 
-.h2 {
-    color: midnightblue;
-    border: 1px solid;
+body {
+    font-family: "bit-font";
+    padding: 0;
     margin: 0;
-    padding: 30px;
-    text-align: center;
-    margin: 20px;
+    background-color: #3D3BFF;
 }
+/*
+.header {
+    display: none;
+    border-bottom: 1px solid black;
+}*/
 
-.message {
-    color:white;
-    font-size: 40px;
-}
-
-/* NAVBAR */
-.navigation {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    border: 1px solid black;
-}
-
-.navigation li {
-    list-style: none;
-}
-
-a {
-    color: black;
-    font-size: 20px;
-    transform: uppercase;
-}
-
-/* MAIN PART */
 .main {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #3D3BFF;
-    border: 1px solid black;
     height: 100vh;
     background-image: url(./assets/gif/5.gif);
     background-size: cover;
+   
+}
+
+/*.wrapper {
+    margin: 0 auto;
+    max-width: 1280px;
+}*/
+
+.pannel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 780px;
+    margin: 0 7rem;
+    padding-bottom: 4rem;
+    background-color: white;
+    box-shadow: 24px 25px 0px 1px rgba(0,0,0,1);
+}
+
+.message_wrap::before {
+    content: '';
+    position: absolute;
+    top: 3rem;
+    left: 0px;
+    width: 100%;
+    border-bottom: 4px solid black;
+}
+
+.message_wrap {
+    justify-content: center;
+    padding: 4rem 4rem;
+}
+
+@media screen and (max-width: 1600px ) {
+    .pannel {
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .pannel {
+         height: 650px;
+         width: 780px;
+         justify-content: space-evenly;
+         margin: 4rem 2rem;
+         padding-bottom: 0;
+    }
+
+    .message_wrap {
+        padding: 0 4rem;
+        height: 115px;
+    }
 }
 
 
-.play-again-btn {
-    border: 1px solid black;
-    margin: 20px;
+@media screen and (max-width: 970px) {
+    .header {
+        height: 50px;
+    }
+
+    .pannel {
+        width: 500px;
+  
+   }
+    code {
+        font-size: 2vw;
+    }
+
+    .message {
+        display: unset;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    code {
+        font-size: 2.5vw;
+    }
+
+    .type_text {
+        font-size: 20px;
+    }
+
+    .pannel {
+        height: 550px;
+        width: 370px;
+    }
+
+    .message {
+        padding: 0 2rem;
+    }
+
+    .question {
+        display: unset;
+        font-size: 20px;
+    }
+
+    
+}
+
+@media screen and (max-width: 420px) {
+    .pannel {
+        margin: 3rem 2rem;
+        height: 500px;
+        width: 300px;
+    }
+
+    .message {
+        font-size: 23px;
+    }
+
+    .message {
+        padding: 0 2rem;
+    }
 
 }
+
+@media screen and (max-width: 340px) {
+    .pannel {
+        width: 285px;
+    }
+}
+
+.btn-container {
+    display: none;
+}
+
+.start-btn {
+        background: #7C7C7C;
+        border-bottom: 6px inset rgba(0,0,0,.5);
+        border-left: 6px inset rgba(0,0,0,.5);
+        border-right: 6px inset rgba(255,255,255,.5);
+        border-top: 6px inset rgba(255,255,255,.5);
+        box-sizing: border-box;
+        color:black;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 2rem;
+        margin-left: 40%;
+        min-width: 160px;
+        padding: .5rem;
+        text-transform: uppercase;
+        width: 100px;
+       
+        
+    }
+ .start-btn:hover {
+            background: #BCBCBC;
+        }
+
+ .card mb-3 {
+     display: flex;
+     justify-content: space-between;
+     margin: 0;
+     
+ }
+
+ a:hover {
+    opacity: 50%;
+ }
+
+ @media only screen and (max-width: 767px) {
+    .characters {
+        flex-wrap: wrap;
+    }
+    .pic {
+        width: 150px;
+    }
+  }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .characters {
+        flex-wrap: wrap;
+    }
+}
+
