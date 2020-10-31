@@ -29,6 +29,7 @@ const quizQuestions = [
     {
         question: 'Is javascript and java the same thing?',
         isCorrect: false,
+        // tip:
     },
     {
         question: 'Did Michael Jackson invent Java Script?',
@@ -153,6 +154,10 @@ const SCORE_BUST_TEXT = document.querySelector('.score_bust_text');
 
 const ONE_SECOND_DIV = document.querySelector('.one_second');
 
+const MOVING_TEXT_WRAP = document.querySelector('.marquee');
+
+const MOVING_TEXT = document.querySelector('.moving_text');
+
 //const coin = document.querySelector(".coin");
 
 
@@ -160,8 +165,23 @@ CHARACTERS_BUTTONS.forEach((button) => {
     button.addEventListener('click', (e) => {
         if(e.target.classList.contains('viet')) {
             VIET_POWER.classList.add('show-power');
+            ANSWER_BUTTONS.forEach((btn) => {
+                btn.addEventListener('click', (el) => {
+                    el.target.classList.add('hidden');
+                    TIP_WRAP.classList.add('show-tip');
+                    TIP_TEXT.innerHTML = returnCurrentQuiz(quizQuestions).isCorrect;
+                    setTimeout(() => { TIP_WRAP.classList.remove('show-tip') }, 2000);
+                })
+            })
         } else if (e.target.classList.contains('nadine')) {
             SCORE_BUST.classList.add('show-bust');
+        } else if (e.target.classList.contains('roxan')) {
+            if ((currentQuestionIndex + 1) % 5 === 0) {
+                console.log('roxana')
+                MOVING_TEXT_WRAP.classList.add('show_moving_wrap');
+                MOVING_TEXT.innerHTML = returnCurrentQuiz(quizQuestions).isCorrect;
+                setTimeout(() => { MOVING_TEXT_WRAP.classList.remove('show_moving_wrap') }, 3000)
+            }
         }
     })
 })
@@ -197,14 +217,7 @@ BUTTONS.forEach((element) => {
         }
 
 
-        ANSWER_BUTTONS.forEach((btn) => {
-            btn.addEventListener('click', (el) => {
-                el.target.classList.add('hidden');
-                TIP_WRAP.classList.add('show-tip');
-                TIP_TEXT.innerHTML = returnCurrentQuiz(quizQuestions).isCorrect;
-                setTimeout(() => { TIP_WRAP.classList.remove('show-tip') }, 2000);
-            })
-        })
+    
 
 
         let flag;
@@ -212,6 +225,7 @@ BUTTONS.forEach((element) => {
             flag = true;
             let answer = returnCurrentQuiz(quizQuestions).isCorrect;
             if (isCorrectAnswer(flag, answer)) {
+                console.log('from if');
                 if ((currentQuestionIndex + 1) % 4 === 0) {
                     console.log('gettt')
                     SCORE_BUST_TEXT.classList.add('show-bust');
@@ -234,9 +248,9 @@ BUTTONS.forEach((element) => {
             flag = false;
             let answer = returnCurrentQuiz(quizQuestions).isCorrect;
             if (isCorrectAnswer(flag, answer)) {
+                console.log('from else');
                 if ((currentQuestionIndex + 1) % 4 === 0) {
                     SCORE_BUST_TEXT.classList.add('show-bust');
-                    console.log(score)
                     SCORE_BUST_TEXT.addEventListener('click', () => {
                         ONE_SECOND_DIV.classList.add('fade-in-fwd');
                         score+=10;
