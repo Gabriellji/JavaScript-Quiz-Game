@@ -163,8 +163,10 @@ const ROXANA_POWER_WRAP = document.querySelector('.roxana_power'); //
 
 const TREASURE_CHEST = document.querySelector('.treasure');
 
-
 CHARACTERS_BUTTONS.forEach((button) => {
+    button.addEventListener('mouseover', () => {
+        playMusic('./assets/audio/choose.wav');
+    })
     button.addEventListener('click', (e) => {
         playMusic('./assets/audio/success.wav');
         PRE_GAME_WRAP.classList.add('scale-out-ver-bottom');

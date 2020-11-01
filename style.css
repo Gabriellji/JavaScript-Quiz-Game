@@ -6,7 +6,6 @@
 
 *,*:before,*:after {
     box-sizing: border-box;
-    cursor: url("./assets/img/1.png"), auto;
 }
 
 body {
@@ -14,13 +13,6 @@ body {
     padding: 0;
     margin: 0;
     background-color: #3D3BFF;
-}
-
-.header {
-    /* width: 100%;
-    height: 100px; */
-    display: none;
-    border-bottom: 1px solid black;
 }
 
 .main {
@@ -31,8 +23,6 @@ body {
     height: 100vh;
     background-image: url(./assets/gif/IllegalNewArrowcrab-size_restricted.gif);
     background-size: cover;
-    /* background-position-y: bottom; */
-    /* background-position-x: right; */
 }
 
 .wrapper {
@@ -250,7 +240,7 @@ pre {
     padding: 20px;
 	text-decoration: none;
     color: white;
-    transition: all .05s ease-in-out;
+    transition: all .25s ease-in-out;
     box-shadow: 
     inset -4px -4px 0px 0px #0e0e0e,
     10px 10px 0px 1px rgba(0,0,0,1);
