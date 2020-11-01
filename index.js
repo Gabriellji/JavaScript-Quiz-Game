@@ -168,10 +168,19 @@ CHARACTERS_BUTTONS.forEach((button) => {
             VIET_POWER.classList.add('show-power');
             ANSWER_BUTTONS.forEach((btn) => {
                 btn.addEventListener('click', (el) => {
-                    playMusic('./assets/audio/bonus.wav')
+                    playMusic('./assets/audio/bonus.wav');
+                    let correctAnswer = returnCurrentQuiz(quizQuestions).isCorrect;
                     el.target.classList.add('hidden');
+                    if (correctAnswer) {
+                        console.log('gfhd')
+                        TIP_TEXT.classList.remove('pink');
+                        TIP_TEXT.classList.add('green');
+                    } else {
+                        TIP_TEXT.classList.remove('green');
+                        TIP_TEXT.classList.add('pink');
+                    }
                     TIP_WRAP.classList.add('show-tip');
-                    TIP_TEXT.innerHTML = returnCurrentQuiz(quizQuestions).isCorrect;
+                    TIP_TEXT.innerHTML = correctAnswer;
                     setTimeout(() => { TIP_WRAP.classList.remove('show-tip') }, 2000);
                 })
             })
@@ -230,7 +239,6 @@ BUTTONS.forEach((element) => {
                     })
                 } 
                 if ((currentQuestionIndex + 1) % 6 === 0) {
-                    console.log('uuuu');
                     TREASURE_CHEST.classList.add('show-treasure');
                     TREASURE_CHEST.addEventListener('click' , () => {
                         playMusic('./assets/audio/coin2.wav');
