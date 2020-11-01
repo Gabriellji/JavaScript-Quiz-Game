@@ -21,7 +21,7 @@ const LAST_SCORE = document.querySelector('.last');
 
 const userStringFromLocalStorage = localStorage.getItem('userScore');
 
-CHARACTERS_BUTTONS = document.querySelectorAll('.power');
+const CHARACTERS_BUTTONS = document.querySelectorAll('.power');
 
 LAST_SCORE.innerHTML = userStringFromLocalStorage;
 
@@ -29,7 +29,6 @@ const quizQuestions = [
     {
         question: 'Is javascript and java the same thing?',
         isCorrect: false,
-        // tip:
     },
     {
         question: 'Did Michael Jackson invent Java Script?',
@@ -108,17 +107,21 @@ const returnCurrentQuiz = (array) => {
     return array[currentQuestionIndex];
 }
 
-const isCorrectAnswer = (answer, correctAnswer) => {
-    let res = answer === correctAnswer;
-    return res;
-}
-
 const drawPixelHeart = () => {
     const img = document.createElement('img');
     img.classList.add('score_desc_img');
     img.src = './assets/img/pixel-heart.png';
     SCORE_DESC.appendChild(img);
 }
+
+const drawPixelPurpleHeart = () => {
+    const img = document.createElement('img');
+    img.classList.add('score_desc_img');
+    img.src = './assets/img/purple.png';
+    SCORE_DESC.appendChild(img);
+    img.innerHTML = '';
+}
+
 let music = new Audio();
 
 const playMusic = (file) => {
@@ -142,7 +145,7 @@ const typeWriter = () => {
 }
 
 
-ANSWER_BUTTONS = document.querySelectorAll('.tip');
+const ANSWER_BUTTONS = document.querySelectorAll('.tip');
 
 const VIET_POWER = document.querySelector('.viet_power');
 
@@ -158,8 +161,6 @@ const ROXANA_POWER_WRAP = document.querySelector('.roxana_power');
 
 const TREASURE_CHEST = document.querySelector('.treasure');
 
-//const coin = document.querySelector(".coin");
-
 
 CHARACTERS_BUTTONS.forEach((button) => {
     button.addEventListener('click', (e) => {
@@ -167,6 +168,7 @@ CHARACTERS_BUTTONS.forEach((button) => {
             VIET_POWER.classList.add('show-power');
             ANSWER_BUTTONS.forEach((btn) => {
                 btn.addEventListener('click', (el) => {
+                    playMusic('./assets/audio/bonus.wav')
                     el.target.classList.add('hidden');
                     TIP_WRAP.classList.add('show-tip');
                     TIP_TEXT.innerHTML = returnCurrentQuiz(quizQuestions).isCorrect;
@@ -185,7 +187,7 @@ CHARACTERS_BUTTONS.forEach((button) => {
 
 BUTTONS.forEach((element) => {
     element.addEventListener('click', (e) => {
-        playMusic('./assets/audio/button-sound.wav');
+        playMusic('./assets/audio/true-false-sound.wav');
         if (currentQuestionIndex === quizQuestions.length - 1) {
             HIDDEN_WRAPS.forEach((element) => {
                 element.classList.add('hidden');
@@ -210,44 +212,32 @@ BUTTONS.forEach((element) => {
             }, 9000);
             return;
         }
-
-
-    
-
-
-
-        // if ((currentQuestionIndex + 1) % 5 === 0) {
-        //     MOVING_TEXT.style.display = 'unset';
-        //     MOVING_TEXT.innerHTML = returnCurrentQuiz(quizQuestions).isCorrect;
-        //     setTimeout(() => { MOVING_TEXT.innerHTML = '' }, 3000);
-        // }
-        let flag;
-        if(e.target.classList.contains('true')) {
-            flag = true;
-            let answer = returnCurrentQuiz(quizQuestions).isCorrect;
-            if (isCorrectAnswer(flag, answer)) {
+        let optionToBoolean = e.target.innerHTML.toLowerCase() === "true";
+        let answer = returnCurrentQuiz(quizQuestions).isCorrect;
+        if(optionToBoolean == answer) {
                 if ((currentQuestionIndex + 1) % 4 === 0) {
                     SCORE_BUST_TEXT.classList.add('show-bust');
                     SCORE_BUST_TEXT.addEventListener('click', () => {
+                        playMusic('./assets/audio/collect.wav');
                         ONE_SECOND_DIV.innerHTML = '+10';
                         ONE_SECOND_DIV.classList.add('fade-in-fwd');
                         score+=10;
-                        drawPixelHeart();
+                        drawPixelPurpleHeart();
                         SCORE_BOX.innerHTML = score;
                         SCORE_BUST_TEXT.classList.remove('show-bust');
                         setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
                         setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
                     })
-                    //setTimeout(() => { SCORE_BUST_TEXT.classList.remove('show-bust') },2000);
                 } 
                 if ((currentQuestionIndex + 1) % 6 === 0) {
                     console.log('uuuu');
                     TREASURE_CHEST.classList.add('show-treasure');
                     TREASURE_CHEST.addEventListener('click' , () => {
+                        playMusic('./assets/audio/coin2.wav');
                         ONE_SECOND_DIV.innerHTML = '+20';
                         ONE_SECOND_DIV.classList.add('fade-in-fwd');
                         score+=20;
-                        drawPixelHeart();
+                        drawPixelPurpleHeart();
                         SCORE_BOX.innerHTML = score;
                         TREASURE_CHEST.classList.remove('show-treasure');
                         setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
@@ -257,41 +247,6 @@ BUTTONS.forEach((element) => {
                 score+=10; 
                 drawPixelHeart();
                 SCORE_BOX.innerHTML = score;
-            }
-        } else {
-            flag = false;
-            let answer = returnCurrentQuiz(quizQuestions).isCorrect;
-            if (isCorrectAnswer(flag, answer)) {
-                if ((currentQuestionIndex + 1) % 4 === 0) {
-                    SCORE_BUST_TEXT.classList.add('show-bust');
-                    SCORE_BUST_TEXT.addEventListener('click', () => {
-                        ONE_SECOND_DIV.classList.add('fade-in-fwd');
-                        score+=10;
-                        drawPixelHeart();
-                        SCORE_BOX.innerHTML = score;
-                        SCORE_BUST_TEXT.classList.remove('show-bust');
-                        setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
-                        setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
-                    })
-                } 
-                if ((currentQuestionIndex + 1) % 6 === 0) {
-                    console.log('uuuu');
-                    TREASURE_CHEST.classList.add('show-treasure');
-                    TREASURE_CHEST.addEventListener('click' , () => {
-                        ONE_SECOND_DIV.innerHTML = '+20';
-                        ONE_SECOND_DIV.classList.add('fade-in-fwd');
-                        score+=20;
-                        drawPixelHeart();
-                        SCORE_BOX.innerHTML = score;
-                        TREASURE_CHEST.classList.remove('show-treasure');
-                        setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
-                        setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
-                    })
-                }
-                score+=10;
-                drawPixelHeart();
-                SCORE_BOX.innerHTML = score;
-            }
         }
         currentQuestionIndex++;
         QUESTIONWRAP.innerHTML = returnCurrentQuiz(quizQuestions).question;
