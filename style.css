@@ -233,14 +233,114 @@ pre {
 }
 
 .btn {
-    position: absolute;
-    top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 100%;
 }
 
 .power {
-    font-size: 25px;
-    padding: 10px;
+    display: inline-block;
+    font-family: "bit-font";
+	position: relative;
+	text-align: center;
+    font-size: 70px;
+    outline: none;
+    padding: 20px;
+	text-decoration: none;
+    color: white;
+    transition: all .05s ease-in-out;
+    box-shadow: 
+    inset -4px -4px 0px 0px #0e0e0e,
+    10px 10px 0px 1px rgba(0,0,0,1);
 }
+
+.power:active {
+	box-shadow: inset 4px 4px 0px 0px #0a0b0a;
+}
+
+.power:before, .power:after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	box-sizing: content-box;
+}
+
+.power:before {
+	top: -6px;
+	left: 0;
+	border-top: 6px black solid;
+	border-bottom: 6px black solid;
+}
+
+.power:after {
+	left: -6px;
+	top: 0;
+	border-left: 6px black solid;
+	border-right: 6px black solid;
+}
+
+.power:nth-child(1) {
+    background-color: #6ad9fe;
+}
+
+.power:nth-child(1):active {
+    box-shadow: inset 4px 4px 0px 0px #0f83aa;
+}
+
+.power:nth-child(1):hover {
+    background-color: #0f83aa;
+}
+
+.power:nth-child(2) {
+    background-color: #fb499d;
+}
+
+.power:nth-child(2):active {
+    box-shadow: inset 4px 4px 0px 0px #ac0353;
+}
+
+.power:nth-child(3) {
+    background-color: #1b23b0;
+}
+
+.power:nth-child(3):active {
+    box-shadow: inset 4px 4px 0px 0px #00066c;
+}
+
+.power:nth-child(4) {
+    background-color: #fea2ec;
+}
+
+.power:nth-child(4):active {
+    box-shadow: inset 4px 4px 0px 0px #c94fb1;
+}
+
+.scale-out-ver-bottom {
+	-webkit-animation: scale-out-ver-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: scale-out-ver-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+  @keyframes scale-out-ver-bottom {
+    0% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      -webkit-transform-origin: 0% 100%;
+              transform-origin: 0% 100%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleY(0);
+              transform: scaleY(0);
+      -webkit-transform-origin: 0% 100%;
+              transform-origin: 0% 100%;
+      opacity: 1;
+    }
+  }
+  
+  
+  
 
 .viet_power {
     position: absolute;
@@ -390,6 +490,20 @@ pre {
 
     .show-treasure {
         display: flex;
+    }
+
+    .characters {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 20;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('./assets/img/pre-game.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
   
   @media screen and (max-width: 1600px ) {

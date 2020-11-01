@@ -144,6 +144,8 @@ const typeWriter = () => {
   }, 3000)
 }
 
+const PRE_GAME_WRAP = document.querySelector('.characters');
+
 
 const ANSWER_BUTTONS = document.querySelectorAll('.tip');
 
@@ -157,38 +159,42 @@ const SCORE_BUST_TEXT = document.querySelector('.score_bust_text');
 
 const ONE_SECOND_DIV = document.querySelector('.one_second');
 
-const ROXANA_POWER_WRAP = document.querySelector('.roxana_power');
+const ROXANA_POWER_WRAP = document.querySelector('.roxana_power'); //
 
 const TREASURE_CHEST = document.querySelector('.treasure');
 
 
 CHARACTERS_BUTTONS.forEach((button) => {
     button.addEventListener('click', (e) => {
+        PRE_GAME_WRAP.classList.add('scale-out-ver-bottom');
         if(e.target.classList.contains('viet')) {
+            console.log('dfghh');
             VIET_POWER.classList.add('show-power');
-            ANSWER_BUTTONS.forEach((btn) => {
-                btn.addEventListener('click', (el) => {
-                    playMusic('./assets/audio/bonus.wav');
-                    let correctAnswer = returnCurrentQuiz(quizQuestions).isCorrect;
-                    el.target.classList.add('hidden');
-                    if (correctAnswer) {
-                        console.log('gfhd')
-                        TIP_TEXT.classList.remove('pink');
-                        TIP_TEXT.classList.add('green');
-                    } else {
-                        TIP_TEXT.classList.remove('green');
-                        TIP_TEXT.classList.add('pink');
-                    }
-                    TIP_WRAP.classList.add('show-tip');
-                    TIP_TEXT.innerHTML = correctAnswer;
-                    setTimeout(() => { TIP_WRAP.classList.remove('show-tip') }, 2000);
-                })
-            })
         } else if (e.target.classList.contains('nadine')) {
             SCORE_BUST.classList.add('show-bust');
         } else if (e.target.classList.contains('roxan')) {
             ROXANA_POWER_WRAP.classList.add('show-treasure');
         }
+        setTimeout(() => { PRE_GAME_WRAP.style.display = 'none'}, 1000);
+    });
+});
+
+ANSWER_BUTTONS.forEach((btn) => {
+    btn.addEventListener('click', (el) => {
+        playMusic('./assets/audio/bonus.wav');
+        let correctAnswer = returnCurrentQuiz(quizQuestions).isCorrect;
+        el.target.classList.add('hidden');
+        if (correctAnswer) {
+            console.log('gfhd')
+            TIP_TEXT.classList.remove('pink');
+            TIP_TEXT.classList.add('green');
+        } else {
+            TIP_TEXT.classList.remove('green');
+            TIP_TEXT.classList.add('pink');
+        }
+        TIP_WRAP.classList.add('show-tip');
+        TIP_TEXT.innerHTML = correctAnswer;
+        setTimeout(() => { TIP_WRAP.classList.remove('show-tip') }, 2000);
     })
 })
 
@@ -241,7 +247,7 @@ BUTTONS.forEach((element) => {
                 if ((currentQuestionIndex + 1) % 6 === 0) {
                     TREASURE_CHEST.classList.add('show-treasure');
                     TREASURE_CHEST.addEventListener('click' , () => {
-                        playMusic('./assets/audio/coin2.wav');
+                        playMusic('./assets/audio/bonus2.wav');
                         ONE_SECOND_DIV.innerHTML = '+20';
                         ONE_SECOND_DIV.classList.add('fade-in-fwd');
                         score+=20;
