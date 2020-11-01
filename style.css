@@ -314,10 +314,6 @@ pre {
 
 
 .coin {
-    /* position: absolute;
-    left: 50%;
-    top: 178px;
-    transform: translateX(-50%); */
     height: 150px;
   }
   
@@ -371,14 +367,14 @@ pre {
   .roxana_power {
     position: absolute;
     display: none;
-    top: 2rem;
+    top: 5rem;
     width: 100%;
     justify-content: center;
   }
 
     .treasure {
         display: none;
-        width: 13%;
+        width: 8%;
     }
 
     .treasure img {
@@ -409,7 +405,7 @@ pre {
     }
 
     .score_desc_img {
-        width: 9%;
+        width: 8%;
     }
 
     .score_wrap {
@@ -428,6 +424,14 @@ pre {
 
     .viet_power {
         top: 1rem;
+    }
+
+    .roxana_power {
+        top: 0rem;
+    }
+
+    .one_second {
+        -webkit-text-stroke: 4px #000;
     }
 }
 
@@ -463,6 +467,14 @@ pre {
 
     .question {
         display: unset;
+    }
+
+    .roxana_power {
+        top: 2rem;
+    }
+
+    .treasure {
+        width: 14%;
     }
 }
 
@@ -505,6 +517,14 @@ pre {
     .viet_power {
         top: 3rem;
     }
+
+    .roxana_power {
+        top: 2rem;
+    }
+
+    .treasure {
+        width: 20%;
+    }
 }
 
 @media screen and (max-width: 420px) {
@@ -546,6 +566,14 @@ pre {
 
     .viet_power {
         top: 5rem;
+    }
+
+    .roxana_power {
+        top: 5rem;
+    }
+
+    .treasure {
+        width: 25%;
     }
 }
 

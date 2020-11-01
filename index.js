@@ -235,9 +235,9 @@ BUTTONS.forEach((element) => {
                         drawPixelHeart();
                         SCORE_BOX.innerHTML = score;
                         SCORE_BUST_TEXT.classList.remove('show-bust');
+                        setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
+                        setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
                     })
-                    setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
-                    setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
                     //setTimeout(() => { SCORE_BUST_TEXT.classList.remove('show-bust') },2000);
                 } 
                 if ((currentQuestionIndex + 1) % 6 === 0) {
@@ -250,9 +250,9 @@ BUTTONS.forEach((element) => {
                         drawPixelHeart();
                         SCORE_BOX.innerHTML = score;
                         TREASURE_CHEST.classList.remove('show-treasure');
+                        setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
+                        setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
                     })
-                    setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
-                    setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
                 }
                 score+=10; 
                 drawPixelHeart();
@@ -270,9 +270,9 @@ BUTTONS.forEach((element) => {
                         drawPixelHeart();
                         SCORE_BOX.innerHTML = score;
                         SCORE_BUST_TEXT.classList.remove('show-bust');
+                        setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
+                        setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
                     })
-                    setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
-                    setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
                 } 
                 if ((currentQuestionIndex + 1) % 6 === 0) {
                     console.log('uuuu');
@@ -284,9 +284,9 @@ BUTTONS.forEach((element) => {
                         drawPixelHeart();
                         SCORE_BOX.innerHTML = score;
                         TREASURE_CHEST.classList.remove('show-treasure');
+                        setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
+                        setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
                     })
-                    setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
-                    setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
                 }
                 score+=10;
                 drawPixelHeart();
