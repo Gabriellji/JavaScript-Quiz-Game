@@ -6,6 +6,7 @@
 
 *,*:before,*:after {
     box-sizing: border-box;
+    cursor: url("./assets/img/1.png"), auto;
 }
 
 body {
@@ -281,6 +282,10 @@ pre {
 	border-right: 6px black solid;
 }
 
+.power:hover {
+    transform: scale(1.5, 1.25);
+}
+
 .power:nth-child(1) {
     background-color: #6ad9fe;
 }
@@ -289,12 +294,9 @@ pre {
     box-shadow: inset 4px 4px 0px 0px #0f83aa;
 }
 
-.power:nth-child(1):hover {
-    background-color: #0f83aa;
-}
 
 .power:nth-child(2) {
-    background-color: #fb499d;
+    background-color: #fd047a;
 }
 
 .power:nth-child(2):active {
@@ -302,7 +304,7 @@ pre {
 }
 
 .power:nth-child(3) {
-    background-color: #1b23b0;
+    background-color: #000eff;
 }
 
 .power:nth-child(3):active {
@@ -310,7 +312,7 @@ pre {
 }
 
 .power:nth-child(4) {
-    background-color: #fea2ec;
+    background-color: #f512b8;
 }
 
 .power:nth-child(4):active {

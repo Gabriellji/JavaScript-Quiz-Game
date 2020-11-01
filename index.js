@@ -166,6 +166,7 @@ const TREASURE_CHEST = document.querySelector('.treasure');
 
 CHARACTERS_BUTTONS.forEach((button) => {
     button.addEventListener('click', (e) => {
+        playMusic('./assets/audio/success.wav');
         PRE_GAME_WRAP.classList.add('scale-out-ver-bottom');
         if(e.target.classList.contains('viet')) {
             console.log('dfghh');
@@ -202,7 +203,6 @@ ANSWER_BUTTONS.forEach((btn) => {
 
 BUTTONS.forEach((element) => {
     element.addEventListener('click', (e) => {
-        playMusic('./assets/audio/true-false-sound.wav');
         if (currentQuestionIndex === quizQuestions.length - 1) {
             HIDDEN_WRAPS.forEach((element) => {
                 element.classList.add('hidden');
@@ -212,10 +212,10 @@ BUTTONS.forEach((element) => {
             SPECH_BUBLE.classList.add('show-message_wrap');
             typeWriter();
             window.localStorage.setItem('userScore', score);
-                if (score <= 30) {
+                if (score <= 60) {
                     playMusic('./assets/audio/lose.wav');
                     MESSAGE.innerHTML = 'It could be better...';
-                } else if (score < 80 && score > 30) {
+                } else if (score < 120 && score > 60) {
                     playMusic('./assets/audio/mid.wav');
                     MESSAGE.innerHTML = 'Practice more!';
                 } else {
@@ -227,9 +227,11 @@ BUTTONS.forEach((element) => {
             }, 9000);
             return;
         }
+        playMusic('./assets/audio/error.wav');
         let optionToBoolean = e.target.innerHTML.toLowerCase() === "true";
         let answer = returnCurrentQuiz(quizQuestions).isCorrect;
         if(optionToBoolean == answer) {
+            playMusic('./assets/audio/true-false-sound.wav');
                 if ((currentQuestionIndex + 1) % 4 === 0) {
                     SCORE_BUST_TEXT.classList.add('show-bust');
                     SCORE_BUST_TEXT.addEventListener('click', () => {
