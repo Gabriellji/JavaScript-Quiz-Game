@@ -368,44 +368,25 @@ pre {
     }
   }
 
-    .marquee {
+  .roxana_power {
+    position: absolute;
+    display: none;
+    top: 2rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+    .treasure {
         display: none;
-        overflow: hidden;
-        position: absolute;
+        width: 13%;
+    }
+
+    .treasure img {
         width: 100%;
-        top: 5rem;
-        animation: text-line-glow 1s linear;
     }
 
-    .show_moving_wrap {
-        display: unset;
-    }
-
-    .marquee p{
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 24px;
-        font-weight: bold;
-        padding: .2em 0;
-        color: #bee606;
-        animation: text 5s infinite linear;
-        padding-left: 100%;
-        white-space: nowrap;
-      } 
-      @keyframes text {
-        0%{
-          transform: translate(0, 0);
-        }
-        
-        100%{
-          transform: translate(-140%, 0);
-        }
-      }
-    @keyframes text-line-glow {
-    0% {text-shadow: 0px 0px 0px #29cac8;
-        }
-    50% {text-shadow: 0px 0px 4px #29cac8;
-        }
+    .show-treasure {
+        display: flex;
     }
   
   @media screen and (max-width: 1600px ) {
@@ -428,7 +409,7 @@ pre {
     }
 
     .score_desc_img {
-        width: 7%;
+        width: 9%;
     }
 
     .score_wrap {

@@ -154,9 +154,9 @@ const SCORE_BUST_TEXT = document.querySelector('.score_bust_text');
 
 const ONE_SECOND_DIV = document.querySelector('.one_second');
 
-const MOVING_TEXT_WRAP = document.querySelector('.marquee');
+const ROXANA_POWER_WRAP = document.querySelector('.roxana_power');
 
-const MOVING_TEXT = document.querySelector('.moving_text');
+const TREASURE_CHEST = document.querySelector('.treasure');
 
 //const coin = document.querySelector(".coin");
 
@@ -176,12 +176,7 @@ CHARACTERS_BUTTONS.forEach((button) => {
         } else if (e.target.classList.contains('nadine')) {
             SCORE_BUST.classList.add('show-bust');
         } else if (e.target.classList.contains('roxan')) {
-            if ((currentQuestionIndex + 1) % 5 === 0) {
-                console.log('roxana')
-                MOVING_TEXT_WRAP.classList.add('show_moving_wrap');
-                MOVING_TEXT.innerHTML = returnCurrentQuiz(quizQuestions).isCorrect;
-                setTimeout(() => { MOVING_TEXT_WRAP.classList.remove('show_moving_wrap') }, 3000)
-            }
+            ROXANA_POWER_WRAP.classList.add('show-treasure');
         }
     })
 })
@@ -220,14 +215,54 @@ BUTTONS.forEach((element) => {
     
 
 
+
+        // if ((currentQuestionIndex + 1) % 5 === 0) {
+        //     MOVING_TEXT.style.display = 'unset';
+        //     MOVING_TEXT.innerHTML = returnCurrentQuiz(quizQuestions).isCorrect;
+        //     setTimeout(() => { MOVING_TEXT.innerHTML = '' }, 3000);
+        // }
         let flag;
         if(e.target.classList.contains('true')) {
             flag = true;
             let answer = returnCurrentQuiz(quizQuestions).isCorrect;
             if (isCorrectAnswer(flag, answer)) {
-                console.log('from if');
                 if ((currentQuestionIndex + 1) % 4 === 0) {
-                    console.log('gettt')
+                    SCORE_BUST_TEXT.classList.add('show-bust');
+                    SCORE_BUST_TEXT.addEventListener('click', () => {
+                        ONE_SECOND_DIV.innerHTML = '+10';
+                        ONE_SECOND_DIV.classList.add('fade-in-fwd');
+                        score+=10;
+                        drawPixelHeart();
+                        SCORE_BOX.innerHTML = score;
+                        SCORE_BUST_TEXT.classList.remove('show-bust');
+                    })
+                    setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
+                    setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
+                    //setTimeout(() => { SCORE_BUST_TEXT.classList.remove('show-bust') },2000);
+                } 
+                if ((currentQuestionIndex + 1) % 6 === 0) {
+                    console.log('uuuu');
+                    TREASURE_CHEST.classList.add('show-treasure');
+                    TREASURE_CHEST.addEventListener('click' , () => {
+                        ONE_SECOND_DIV.innerHTML = '+20';
+                        ONE_SECOND_DIV.classList.add('fade-in-fwd');
+                        score+=20;
+                        drawPixelHeart();
+                        SCORE_BOX.innerHTML = score;
+                        TREASURE_CHEST.classList.remove('show-treasure');
+                    })
+                    setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
+                    setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
+                }
+                score+=10; 
+                drawPixelHeart();
+                SCORE_BOX.innerHTML = score;
+            }
+        } else {
+            flag = false;
+            let answer = returnCurrentQuiz(quizQuestions).isCorrect;
+            if (isCorrectAnswer(flag, answer)) {
+                if ((currentQuestionIndex + 1) % 4 === 0) {
                     SCORE_BUST_TEXT.classList.add('show-bust');
                     SCORE_BUST_TEXT.addEventListener('click', () => {
                         ONE_SECOND_DIV.classList.add('fade-in-fwd');
@@ -238,25 +273,17 @@ BUTTONS.forEach((element) => {
                     })
                     setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
                     setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
-                    //setTimeout(() => { SCORE_BUST_TEXT.classList.remove('show-bust') },2000);
-                }
-                score+=10; 
-                drawPixelHeart();
-                SCORE_BOX.innerHTML = score;
-            }
-        } else {
-            flag = false;
-            let answer = returnCurrentQuiz(quizQuestions).isCorrect;
-            if (isCorrectAnswer(flag, answer)) {
-                console.log('from else');
-                if ((currentQuestionIndex + 1) % 4 === 0) {
-                    SCORE_BUST_TEXT.classList.add('show-bust');
-                    SCORE_BUST_TEXT.addEventListener('click', () => {
+                } 
+                if ((currentQuestionIndex + 1) % 6 === 0) {
+                    console.log('uuuu');
+                    TREASURE_CHEST.classList.add('show-treasure');
+                    TREASURE_CHEST.addEventListener('click' , () => {
+                        ONE_SECOND_DIV.innerHTML = '+20';
                         ONE_SECOND_DIV.classList.add('fade-in-fwd');
-                        score+=10;
+                        score+=20;
                         drawPixelHeart();
                         SCORE_BOX.innerHTML = score;
-                        SCORE_BUST_TEXT.classList.remove('show-bust');
+                        TREASURE_CHEST.classList.remove('show-treasure');
                     })
                     setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
                     setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
