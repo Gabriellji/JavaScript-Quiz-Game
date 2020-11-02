@@ -231,7 +231,7 @@ pre {
 }
 
 .power {
-    display: inline-block;
+    display: none;
     font-family: "bit-font";
 	position: relative;
 	text-align: center;
@@ -276,36 +276,36 @@ pre {
     transform: scale(1.5, 1.25);
 }
 
-.power:nth-child(1) {
+.viet-button {
     background-color: #6ad9fe;
 }
 
-.power:nth-child(1):active {
+.viet-button:active {
     box-shadow: inset 4px 4px 0px 0px #0f83aa;
 }
 
 
-.power:nth-child(2) {
+.nadine-button {
     background-color: #fd047a;
 }
 
-.power:nth-child(2):active {
+.nadine-button:active {
     box-shadow: inset 4px 4px 0px 0px #ac0353;
 }
 
-.power:nth-child(3) {
+.roxan-button {
     background-color: #000eff;
 }
 
-.power:nth-child(3):active {
+.roxan-button:active {
     box-shadow: inset 4px 4px 0px 0px #00066c;
 }
 
-.power:nth-child(4) {
+.jane-button {
     background-color: #f512b8;
 }
 
-.power:nth-child(4):active {
+.jane-button:active {
     box-shadow: inset 4px 4px 0px 0px #c94fb1;
 }
 
@@ -492,7 +492,8 @@ pre {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url('./assets/img/pre-game.jpg');
+        background-color: #3D3BFF;
+        background: url('./assets/tumblr_e97a90e92146ee85c0a1396fcbf4a378_4d7183fd_500.gif') no-repeat center center fixed; 
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
