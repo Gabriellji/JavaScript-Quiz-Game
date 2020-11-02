@@ -14,22 +14,42 @@ let janeBtn = document.querySelector('.jane-button');
 let nadineBtn = document.querySelector('.nadine-button');
 let vietBtn = document.querySelector('.viet-button');
 
+const POXANA_WRAP = document.querySelector('.roxana_wrap');
+const JANE_WRAP = document.querySelector('.jane_wrap');
+const NADINE_WRAP = document.querySelector('.nadine_wrap');
+const VIET_WRAP = document.querySelector('.viet_wrap');
+
+const CLOSE_BTN = document.querySelectorAll('.close');
+CLOSE_BTN.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        btn.parentElement.classList.add('scale-out-center');
+        
+        wrapper.style.display = 'unset';
+        setTimeout(() => { 
+            btn.parentElement.classList.remove('scale-out-center');
+            btn.parentElement.style.display = 'none';
+        }, 1000);
+    })
+})
 
 pic.forEach((item)=>{
-    item.addEventListener('click',function(el){
+    item.addEventListener('click', (el) => {
        if(el.target.classList.contains('roxana')){
-        wrapper.style.display = 'none';
-        roxanaBtn.style.display = 'block';
-        document.querySelector('.card-container-roxana').style.display = 'block';
+        POXANA_WRAP.style.display = 'flex';
+        POXANA_WRAP.classList.add('scale-in-center');
+        roxanaBtn.style.display = 'flex';
        }else if(el.target.classList.contains('jane')){
-        document.querySelector('.card-container-jane').style.display = 'block';
-        janeBtn.style.display = 'block';
+        JANE_WRAP.style.display = 'flex';
+        JANE_WRAP.classList.add('scale-in-center');
+        janeBtn.style.display = 'flex';
        }else if(el.target.classList.contains('nadine')){
-        document.querySelector('.card-container-nadine').style.display = 'block';
-        nadineBtn.style.display = 'block';
+        NADINE_WRAP.style.display = 'flex';
+        NADINE_WRAP.classList.add('scale-in-center');
+        nadineBtn.style.display = 'flex';
        }else {
-        document.querySelector('.card-container-viet').style.display = 'block';
-        vietBtn.style.display = 'block';
+        VIET_WRAP.style.display = 'flex';
+        VIET_WRAP.classList.add('scale-in-center');
+        vietBtn.style.display = 'flex';
        }
         wrapper.style.display = 'none';
         bubble.style.display = 'block';

@@ -28,10 +28,10 @@
 
 .main-roxana {
     display: flex;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
-    /* background-color: #3D3BFF; */
-    height: 100vh;
    
 }
 
@@ -196,18 +196,18 @@
 /* roxana card */
 
   .card-container-roxana {
-      display: none;
+      /* display: none; */
       border: 1px solid rgba(0, 0, 0, 0.027);
       width: 500px;
       height: 700px;
-      margin-top: 200px;
-      margin-left: 100px;
+      /* margin-top: 200px;
+      margin-left: 100px; */
       border-radius: 15px;
       box-sizing: border-box;
       box-shadow: 2px 2px 2px 2px #131111;
       background: black;
-      position: absolute;
-      left: 10px;
+      /* position: absolute;
+      left: 10px; */
       margin-top: 10px;
   }
    .card-roxana-background {
@@ -224,20 +224,20 @@
 
   /* jane card */
   .card-container-jane {
-    display: none;
+    /* display: none; */
     border: 1px solid rgba(0, 0, 0, 0.027);
     width: 500px;
     height: 700px;
-    margin-top: 200px;
-    margin-left: 100px;
+    /* margin-top: 200px;
+    margin-left: 100px; */
     border-radius: 15px;
     box-sizing: border-box;
     box-shadow: 2px 2px 2px 2px #131111;
     background: black;
-    position: absolute;
-    left: 10px;
+    /* position: absolute;
+    left: 10px; */
     margin-top: 10px;
-
+    display: inline-table;
   }
 
   .card-jane-background {
@@ -254,18 +254,18 @@
 
 /* nadine card */
 .card-container-nadine {
-    display: none;
+    /* display: none; */
     border: 1px solid rgba(0, 0, 0, 0.027);
     width: 500px;
     height: 700px;
-    margin-top: 200px;
-    margin-left: 100px;
+    /* margin-top: 200px;
+    margin-left: 100px; */
     border-radius: 15px;
     box-sizing: border-box;
     box-shadow: 2px 2px 2px 2px #131111;
     background: black;
-    position: absolute;
-    left: 10px;
+    /* position: absolute;
+    left: 10px; */
     margin-top: 10px;
 
   }
@@ -284,18 +284,18 @@
 }
  /* viet card */
  .card-container-viet {
-    display: none;
+    /* display: none; */
     border: 1px solid rgba(0, 0, 0, 0.027);
     width: 500px;
     height: 700px;
-    margin-top: 200px;
-    margin-left: 100px;
+    /* margin-top: 200px;
+    margin-left: 100px; */
     border-radius: 15px;
     box-sizing: border-box;
     box-shadow: 2px 2px 2px 2px #131111;
     background: black;
-    position: absolute;
-    left: 10px;
+    /* position: absolute;
+    left: 10px; */
     margin-top: 10px;
 
   }
@@ -498,3 +498,84 @@
   }
    
     
+.card_wrap {
+    display: none;
+    position: absolute;
+    width: 70%;
+    background: #111323b8;
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.card_text {
+    font-size: 1.2vw;
+    animation: text-line-glow 2s linear infinite;
+}
+
+@keyframes text-line-glow {
+    0% {text-shadow: 0px 0px 0px #29cac8;
+       }
+    50% {text-shadow: 0px 0px 4px #29cac8;
+       }
+    }
+
+.card_wrap_more {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    color: #4ac37b;
+}
+
+.scale-in-center {
+	animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.scale-out-center {
+	animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    width: 40px;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+}
+
+.close:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.close img {
+    width: 70%;
+}
+
+  @keyframes scale-in-center {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes scale-out-center {
+    0% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+  }
+  
+  

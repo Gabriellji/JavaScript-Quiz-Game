@@ -15,6 +15,10 @@ body {
     background-color: #3D3BFF;
 }
 
+button {
+    cursor: pointer;
+}
+
 .main {
     display: flex;
     justify-content: center;
@@ -234,8 +238,10 @@ pre {
     display: none;
     font-family: "bit-font";
 	position: relative;
-	text-align: center;
-    font-size: 70px;
+    text-align: center;
+    height: fit-content;
+    width: fit-content;
+    font-size: 3vw;
     outline: none;
     padding: 20px;
 	text-decoration: none;
@@ -273,11 +279,11 @@ pre {
 }
 
 .power:hover {
-    transform: scale(1.5, 1.25);
+    transform: scale(1.1, 1.1);
 }
 
 .viet-button {
-    background-color: #6ad9fe;
+    background-color: #5b58b6;
 }
 
 .viet-button:active {
@@ -286,7 +292,7 @@ pre {
 
 
 .nadine-button {
-    background-color: #fd047a;
+    background-color: #49c0d8;;
 }
 
 .nadine-button:active {
@@ -294,7 +300,7 @@ pre {
 }
 
 .roxan-button {
-    background-color: #000eff;
+    background-color: #285397;
 }
 
 .roxan-button:active {
@@ -302,7 +308,7 @@ pre {
 }
 
 .jane-button {
-    background-color: #f512b8;
+    background-color: #e728bd;
 }
 
 .jane-button:active {
