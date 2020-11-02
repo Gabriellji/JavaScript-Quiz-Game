@@ -15,14 +15,32 @@ const SCORE_BOX = document.querySelector('.points');
 const SCORE_DESC = document.querySelector('.score_desc');
 
 const SPECH_BUBLE = document.querySelector('.message_wrap');
+
 const MESSAGE = document.querySelector('.message_text');
 
 const LAST_SCORE = document.querySelector('.last');
 
-const userStringFromLocalStorage = localStorage.getItem('userScore');
-
 const CHARACTERS_BUTTONS = document.querySelectorAll('.power');
 
+const PRE_GAME_WRAP = document.querySelector('.characters');
+
+const ANSWER_BUTTONS = document.querySelectorAll('.tip');
+
+const VIET_POWER = document.querySelector('.viet_power');
+
+const TIP_WRAP = document.querySelector('.tip_wrap');
+const TIP_TEXT = document.querySelector('.tip_text');
+
+const SCORE_BUST = document.querySelector('.score_bust');
+const SCORE_BUST_TEXT = document.querySelector('.score_bust_text');
+
+const ONE_SECOND_DIV = document.querySelector('.one_second');
+
+const ROXANA_POWER_WRAP = document.querySelector('.roxana_power');
+
+const TREASURE_CHEST = document.querySelector('.treasure');
+
+const userStringFromLocalStorage = localStorage.getItem('userScore');
 LAST_SCORE.innerHTML = userStringFromLocalStorage;
 
 const quizQuestions = [
@@ -127,7 +145,14 @@ let music = new Audio();
 const playMusic = (file) => {
     music.pause();
     music = new Audio(file);
-    music.play();
+    let startPlayPromise = music.play();
+    if (startPlayPromise !== undefined) {
+        startPlayPromise.then(() => { 
+            music.play();
+        }).catch(error => {
+          console.log(error);
+        });
+      }
 }
 
 let start = 0;
@@ -144,29 +169,10 @@ const typeWriter = () => {
   }, 3000)
 }
 
-const PRE_GAME_WRAP = document.querySelector('.characters');
-
-
-const ANSWER_BUTTONS = document.querySelectorAll('.tip');
-
-const VIET_POWER = document.querySelector('.viet_power');
-
-const TIP_WRAP = document.querySelector('.tip_wrap');
-const TIP_TEXT = document.querySelector('.tip_text');
-
-const SCORE_BUST = document.querySelector('.score_bust');
-const SCORE_BUST_TEXT = document.querySelector('.score_bust_text');
-
-const ONE_SECOND_DIV = document.querySelector('.one_second');
-
-const ROXANA_POWER_WRAP = document.querySelector('.roxana_power'); //
-
-const TREASURE_CHEST = document.querySelector('.treasure');
-
 CHARACTERS_BUTTONS.forEach((button) => {
     button.addEventListener('mouseover', () => {
         playMusic('./assets/audio/choose.wav');
-    })
+    });
     button.addEventListener('click', (e) => {
         playMusic('./assets/audio/success.wav');
         PRE_GAME_WRAP.classList.add('scale-out-ver-bottom');
