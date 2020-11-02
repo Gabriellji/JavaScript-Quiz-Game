@@ -170,10 +170,12 @@ const typeWriter = () => {
 }
 
 CHARACTERS_BUTTONS.forEach((button) => {
+
     button.addEventListener('mouseover', () => {
         playMusic('./assets/audio/choose.wav');
     });
     button.addEventListener('click', (e) => {
+        console.log('fghsfghfshftdhft');
         playMusic('./assets/audio/success.wav');
         PRE_GAME_WRAP.classList.add('scale-out-ver-bottom');
         if(e.target.classList.contains('viet')) {
@@ -194,7 +196,6 @@ ANSWER_BUTTONS.forEach((btn) => {
         let correctAnswer = returnCurrentQuiz(quizQuestions).isCorrect;
         el.target.classList.add('hidden');
         if (correctAnswer) {
-            console.log('gfhd')
             TIP_TEXT.classList.remove('pink');
             TIP_TEXT.classList.add('green');
         } else {
