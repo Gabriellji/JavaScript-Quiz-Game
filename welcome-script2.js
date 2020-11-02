@@ -1,4 +1,4 @@
-let pics = document.querySelectorAll(".pic");
+let pic = document.querySelectorAll(".pic");
 let characters = document.querySelector('.characters');
 let wrapper = document.querySelector('.main_panel');
 let button = document.querySelector('.start-btn');
@@ -9,31 +9,21 @@ let jane = document.querySelector('.jane');
 let nadine = document.querySelector('.nadine');
 let viet = document.querySelector('.viet');
 
-roxana.addEventListener('click', function () {
-    wrapper.style.display = 'none';
-    document.querySelector('.card-container-roxana').style.display = 'block';
-    button.style.display = 'block';
-    bubble.style.display = 'block';
 
+pic.forEach((item)=>{
+    item.addEventListener('click',function(el){
+       if(el.target.classList.contains('roxana')){
+        document.querySelector('.card-container-roxana').style.display = 'block';
+       }else if(el.target.classList.contains('jane')){
+        document.querySelector('.card-container-jane').style.display = 'block';
+       }else if(el.target.classList.contains('nadine')){
+        document.querySelector('.card-container-nadine').style.display = 'block';
+       }else {
+        document.querySelector('.card-container-viet').style.display = 'block';
+       }
+       wrapper.style.display = 'none';
+       button.style.display = 'block';
+       bubble.style.display = 'block';
+    })
 })
 
-jane.addEventListener('click', function () {
-    wrapper.style.display = 'none';
-    document.querySelector('.card-container-jane').style.display = 'block';
-    button.style.display = 'block';
-    bubble.style.display = 'block';
-})
-
-nadine.addEventListener('click', function () {
-    wrapper.style.display = 'none';
-    document.querySelector('.card-container-nadine').style.display = 'block';
-    button.style.display = 'block';
-    bubble.style.display = 'block';
-})
-
-viet.addEventListener('click', function () {
-    wrapper.style.display = 'none';
-    document.querySelector('.card-container-viet').style.display = 'block';
-    button.style.display = 'block';
-    bubble.style.display = 'block';
-})
