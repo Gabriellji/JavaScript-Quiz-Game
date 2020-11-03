@@ -14,36 +14,36 @@ body {
     margin: 0;
     background-color: #3D3BFF;
 }
-/*
+
 .header {
     display: none;
     border-bottom: 1px solid black;
-}*/
+}
 
 .main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #3D3BFF;
+    background-color: #3D3BFF; 
     height: 100vh;
-    background-image: url(./assets/gif/5.gif);
+    background-image: url(assets/gif/5.gif);
     background-size: cover;
    
 }
 
-/*.wrapper {
+.wrapper {
     margin: 0 auto;
     max-width: 1280px;
-}*/
+}
 
 .pannel {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 780px;
+    height: 650px;
     margin: 0 7rem;
-    padding-bottom: 4rem;
+    padding-bottom: 4 rem;
     background-color: white;
     box-shadow: 24px 25px 0px 1px rgba(0,0,0,1);
 }
@@ -62,7 +62,28 @@ body {
     padding: 4rem 4rem;
 }
 
-@media screen and (max-width: 1600px ) {
+
+ .container {
+     float: left;
+     justify-content: center;
+ }
+
+
+
+
+
+
+/*@media only screen and (min-width: 600px) and (max-width: 1023px) {
+    .container {
+        flex-wrap: wrap;
+    }
+    .pic {
+        width: 150px;
+    }
+  }
+
+
+  @media screen and (max-width: 1600px ) {
     .pannel {
         width: 1000px;
     }
@@ -97,9 +118,9 @@ body {
         font-size: 2vw;
     }
 
-    .message {
+  .message {
         display: unset;
-    }
+    } 
 }
 
 @media screen and (max-width: 570px) {
@@ -120,87 +141,23 @@ body {
         padding: 0 2rem;
     }
 
-    .question {
-        display: unset;
-        font-size: 20px;
-    }
-
     
 }
 
-@media screen and (max-width: 420px) {
-    .pannel {
-        margin: 3rem 2rem;
-        height: 500px;
-        width: 300px;
-    }
 
+ @media screen and (max-width: 320px) {
     .message {
-        font-size: 23px;
+        font-size: 15px;
     }
-
-    .message {
-        padding: 0 2rem;
-    }
-
-}
-
-@media screen and (max-width: 340px) {
     .pannel {
         width: 285px;
     }
-}
-
-.btn-container {
-    display: none;
-}
-
-.start-btn {
-        background: #7C7C7C;
-        border-bottom: 6px inset rgba(0,0,0,.5);
-        border-left: 6px inset rgba(0,0,0,.5);
-        border-right: 6px inset rgba(255,255,255,.5);
-        border-top: 6px inset rgba(255,255,255,.5);
-        box-sizing: border-box;
-        color:black;
-        cursor: pointer;
-        display: inline-block;
-        font-size: 2rem;
-        margin-left: 40%;
-        min-width: 160px;
-        padding: .5rem;
-        text-transform: uppercase;
-        width: 100px;
-       
+    
+    .container {
+        display: flex;
         
     }
- .start-btn:hover {
-            background: #BCBCBC;
-        }
-
- .card mb-3 {
-     display: flex;
-     justify-content: space-between;
-     margin: 0;
-     
- }
-
- a:hover {
-    opacity: 50%;
- }
-
- @media only screen and (max-width: 767px) {
-    .characters {
-        flex-wrap: wrap;
-    }
     .pic {
-        width: 150px;
+        width: 100px;
     }
-  }
-
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .characters {
-        flex-wrap: wrap;
-    }
-}
-
+} 
