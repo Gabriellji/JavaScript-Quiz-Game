@@ -41,7 +41,6 @@ button {
     flex-direction: column;
     justify-content: space-between;
     height: 450px;
-    /* margin: 0 7rem; */
     padding-bottom: 4rem;
     background-color: white;
     box-shadow: 24px 25px 0px 1px rgba(0,0,0,1);
@@ -147,21 +146,6 @@ pre {
     inset -4px -4px 0px 0px #4AA52E,
     10px 10px 0px 1px rgba(0,0,0,1);
 }
-
-/* .roxan_tip_green {
-    color: #fd03fe;
-} 
-
-.roxan_tip_pink {
-    color: #bee600;;
-}  */
-
-
-
-/* .eightbit-btn:hover, .eightbit-btn:focus {
-	background: #76c442;
-	box-shadow: inset -6px -6px 0px 0px #4AA52E;
-} */
 
 .eightbit-btn:active {
 	box-shadow: inset 4px 4px 0px 0px #4AA52E;
@@ -499,7 +483,7 @@ pre {
         justify-content: center;
         align-items: center;
         background-color: #3D3BFF;
-        background: url('./assets/tumblr_e97a90e92146ee85c0a1396fcbf4a378_4d7183fd_500.gif') no-repeat center center fixed; 
+        background: url('./assets/gif/tumblr_e97a90e92146ee85c0a1396fcbf4a378_4d7183fd_500.gif') no-repeat center center fixed; 
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
