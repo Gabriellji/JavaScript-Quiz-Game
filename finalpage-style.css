@@ -15,7 +15,7 @@
     align-items: center;
 }
 
-.nadine {
+.content {
     width: 70%;
     height: 70%;
     background-color: white;
@@ -23,6 +23,7 @@
     padding: 2rem;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 24px 25px 0px 1px rgba(0,0,0,1);
 
 }
 
@@ -33,13 +34,22 @@
     height: 100px;
 }
 
-.pic {
-    background-color: tomato;
-    width: 20%;
-    height: 100%;
+.pic img {
+    /* background-color: tomato; */
+    width: 150px;
+    height: 150px;
+    /* width: 20%; */
+    /* height: 100%; */
     border-radius: 50%;
+    margin-top: 50px;
 
 }
+
+.textbox {
+    position: relative;
+}
+
+
 
 .socialmedia {
     display: flex;
@@ -57,3 +67,4 @@
 .link img {
     width: 50px;
 }
+
