@@ -126,7 +126,7 @@ const quizQuestions = [
         isCorrect: true,
     },
     {
-        question: 'Can we multyplay a string with a number?',
+        question: 'Can we multiply a string with a number?',
         isCorrect: false,
     },
     {
