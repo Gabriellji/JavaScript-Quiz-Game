@@ -1,104 +1,35 @@
-let pic = document.querySelectorAll(".pic");
-let characters = document.querySelector('.characters-roxana');
-let wrapper = document.querySelector('.main_panel-roxana');
-let button = document.querySelector('.start-btn');
-let bubble = document.querySelector('.bubble')
-
-let roxana = document.querySelector('.roxana');
-let jane = document.querySelector('.jane');
-let nadine = document.querySelector('.nadine');
-let viet = document.querySelector('.viet');
-
-let roxanaBtn = document.querySelector('.roxan-button');
-let janeBtn = document.querySelector('.jane-button');
-let nadineBtn = document.querySelector('.nadine-button');
-let vietBtn = document.querySelector('.viet-button');
-
-
+const PIC = document.querySelectorAll(".pic");
+const WRAPER = document.querySelector('.main_panel-roxana');
+const ROXANA_BTN = document.querySelector('.roxan-button');
+const JANE_BTN = document.querySelector('.jane-button');
+const NADINE_BTN = document.querySelector('.nadine-button');
+const VIET_BTN = document.querySelector('.viet-button');
 const POXANA_WRAP = document.querySelector('.roxana_wrap');
 const JANE_WRAP = document.querySelector('.jane_wrap');
 const NADINE_WRAP = document.querySelector('.nadine_wrap');
 const VIET_WRAP = document.querySelector('.viet_wrap');
-
 const CLOSE_BTN = document.querySelectorAll('.close');
-CLOSE_BTN.forEach((btn) => {
-    btn.addEventListener('click', () => {
-        btn.parentElement.classList.add('scale-out-center');
-        
-        wrapper.style.display = 'unset';
-        setTimeout(() => { 
-            btn.parentElement.classList.remove('scale-out-center');
-            btn.parentElement.style.display = 'none';
-        }, 1000);
-    })
-})
-
-const hide = (element) => {
-    element.style.display = 'none';
-}
-
-pic.forEach((item)=>{
-    item.addEventListener('click', (el) => {
-       if(el.target.classList.contains('roxana')){
-        POXANA_WRAP.style.display = 'flex';
-        POXANA_WRAP.classList.add('scale-in-center');
-        roxanaBtn.style.display = 'flex';
-       }else if(el.target.classList.contains('jane')){
-        JANE_WRAP.style.display = 'flex';
-        JANE_WRAP.classList.add('scale-in-center');
-        janeBtn.style.display = 'flex';
-       }else if(el.target.classList.contains('nadine')){
-        NADINE_WRAP.style.display = 'flex';
-        NADINE_WRAP.classList.add('scale-in-center');
-        nadineBtn.style.display = 'flex';
-       }else {
-        VIET_WRAP.style.display = 'flex';
-        VIET_WRAP.classList.add('scale-in-center');
-        vietBtn.style.display = 'flex';
-       }
-        wrapper.style.display = 'none';
-    })
-})
-
 const BUTTONS = document.querySelectorAll('.mybutton'); 
 const HIDDEN_WRAPS = document.querySelectorAll('.hide');
-
 const QUESTIONWRAP = document.querySelector('.question');
-
 const TYPING_TEXT_WRAP = document.querySelector('.final_score');
-
 const FIREWALK_WRAP = document.querySelector('.pyro');
-
 const TYPING_TEXT = document.querySelector('.type_text');
-
 const SCORE_BOX = document.querySelector('.points');
-
 const SCORE_DESC = document.querySelector('.score_desc');
-
 const SPECH_BUBLE = document.querySelector('.message_wrap');
-
 const MESSAGE = document.querySelector('.message_text');
-
 const LAST_SCORE = document.querySelector('.last');
-
 const CHARACTERS_BUTTONS = document.querySelectorAll('.power');
-
 const PRE_GAME_WRAP = document.querySelector('.characters');
-
 const ANSWER_BUTTONS = document.querySelectorAll('.tip');
-
 const VIET_POWER = document.querySelector('.viet_power');
-
 const TIP_WRAP = document.querySelector('.tip_wrap');
 const TIP_TEXT = document.querySelector('.tip_text');
-
 const SCORE_BUST = document.querySelector('.score_bust');
 const SCORE_BUST_TEXT = document.querySelector('.score_bust_text');
-
 const ONE_SECOND_DIV = document.querySelector('.one_second');
-
 const ROXANA_POWER_WRAP = document.querySelector('.roxana_power');
-
 const TREASURE_CHEST = document.querySelector('.treasure');
 
 const userStringFromLocalStorage = localStorage.getItem('userScore');
@@ -176,7 +107,6 @@ const quizQuestions = [
 ];
 
 QUESTIONWRAP.innerHTML = quizQuestions[0].question;
-
 SCORE_BOX.innerHTML = 0;
 
 let score = 0;
@@ -184,14 +114,14 @@ let currentQuestionIndex = 0;
 
 const returnCurrentQuiz = (array) => {
     return array[currentQuestionIndex];
-}
+};
 
 const drawPixelHeart = () => {
     const img = document.createElement('img');
     img.classList.add('score_desc_img');
     img.src = './assets/img/pixel-heart.png';
     SCORE_DESC.appendChild(img);
-}
+};
 
 const drawPixelPurpleHeart = () => {
     const img = document.createElement('img');
@@ -199,7 +129,11 @@ const drawPixelPurpleHeart = () => {
     img.src = './assets/img/purple.png';
     SCORE_DESC.appendChild(img);
     img.innerHTML = '';
-}
+};
+
+const hide = (element) => {
+    element.style.display = 'none';
+};
 
 let music = new Audio();
 
@@ -214,7 +148,7 @@ const playMusic = (file) => {
           console.log(error);
         });
       }
-}
+};
 
 let start = 0;
 let controlTimeOut;
@@ -227,16 +161,50 @@ const typeWriter = () => {
   controlTimeOut = setTimeout(typeWriter, speedOFTyping);
   setTimeout(() => {
     clearTimeout(controlTimeOut);
-  }, 3000)
-}
+  }, 3000);
+};
+
+CLOSE_BTN.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        btn.parentElement.classList.add('scale-out-center');
+        
+        WRAPER.style.display = 'unset';
+        setTimeout(() => { 
+            btn.parentElement.classList.remove('scale-out-center');
+            btn.parentElement.style.display = 'none';
+        }, 1000);
+    });
+});
+
+PIC.forEach((item)=>{
+    item.addEventListener('click', (el) => {
+       if(el.target.classList.contains('roxana')){
+        POXANA_WRAP.style.display = 'flex';
+        POXANA_WRAP.classList.add('scale-in-center');
+        ROXANA_BTN.style.display = 'flex';
+       }else if(el.target.classList.contains('jane')){
+        JANE_WRAP.style.display = 'flex';
+        JANE_WRAP.classList.add('scale-in-center');
+        JANE_BTN.style.display = 'flex';
+       }else if(el.target.classList.contains('nadine')){
+        NADINE_WRAP.style.display = 'flex';
+        NADINE_WRAP.classList.add('scale-in-center');
+        NADINE_BTN.style.display = 'flex';
+       }else {
+        VIET_WRAP.style.display = 'flex';
+        VIET_WRAP.classList.add('scale-in-center');
+        VIET_BTN.style.display = 'flex';
+       }
+        WRAPER.style.display = 'none';
+    });
+});
+
 
 CHARACTERS_BUTTONS.forEach((button) => {
-
     button.addEventListener('mouseover', () => {
         playMusic('./assets/audio/choose.wav');
     });
     button.addEventListener('click', (e) => {
-        console.log('fghsfghfshftdhft');
         playMusic('./assets/audio/success.wav');
         PRE_GAME_WRAP.classList.add('scale-out-ver-bottom');
         if(e.target.classList.contains('viet-button')) {
@@ -280,7 +248,7 @@ BUTTONS.forEach((element) => {
         if (currentQuestionIndex === quizQuestions.length - 1) {
             HIDDEN_WRAPS.forEach((element) => {
                 element.classList.add('hidden');
-            })
+            });
             FIREWALK_WRAP.classList.add('active');
             TYPING_TEXT_WRAP.classList.add('final_score_show');
             SPECH_BUBLE.classList.add('show-message_wrap');
@@ -318,7 +286,7 @@ BUTTONS.forEach((element) => {
                         SCORE_BUST_TEXT.classList.remove('show-bust');
                         setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
                         setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
-                    })
+                    });
                 } 
                 if ((currentQuestionIndex + 1) % 6 === 0) {
                     TREASURE_CHEST.classList.add('show-treasure');
@@ -332,7 +300,7 @@ BUTTONS.forEach((element) => {
                         TREASURE_CHEST.classList.remove('show-treasure');
                         setTimeout(() => { ONE_SECOND_DIV.classList.add('fade-out-bck') }, 2000);
                         setTimeout(() => { ONE_SECOND_DIV.classList.remove('fade-out-bck', 'fade-in-fwd') }, 3000);
-                    })
+                    });
                 }
                 score+=10; 
                 drawPixelHeart();
@@ -340,6 +308,6 @@ BUTTONS.forEach((element) => {
         }
         currentQuestionIndex++;
         QUESTIONWRAP.innerHTML = returnCurrentQuiz(quizQuestions).question;
-    })
+    });
     
-})
+});
