@@ -8,24 +8,6 @@
     box-sizing: border-box;
 }
 
-/* body {
-    font-family: "bit-font";
-    padding: 0;
-    margin: 0;
-    background-color: #3D3BFF;
-     background: url('./assets/tumblr_e97a90e92146ee85c0a1396fcbf4a378_4d7183fd_500.gif') no-repeat center center fixed; 
-     -webkit-background-size: cover;
-     -moz-background-size: cover;
-     -o-background-size: cover;
-     background-size: cover;
-      
-}
-
-.header {
-    display: none;
-    border-bottom: 1px solid black;
-} */
-
 .main-roxana {
     display: flex;
     width: 100%;
@@ -34,20 +16,12 @@
     align-items: center;
    
 }
-
-/* .wrapper {
-    margin: 0 auto;
-    max-width: 1280px;
-} */
-
 .pannel-roxana {
     position: relative;
     max-width: 1200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* height: 700px; */
-    /* width: 100%; */
     margin: 0 7rem;
     padding-bottom: 4rem;
 }
@@ -65,17 +39,18 @@
  .characters-roxana {
     display: flex;
     justify-content: space-around;
-    margin: 0;
+    margin: 2rem 0 0 0.5rem;
     flex-wrap: wrap;
      
  }
 
  .characters-roxana div {
     z-index: 1;
+    transition: all .25s;
  }
 
- .pic:hover {
-    opacity: 50%;
+ .characters-roxana div:hover {
+    transform: scale(1.1, 1.1);
  }
 
 
@@ -97,7 +72,6 @@
 
 @media screen and (max-width: 1025px) {
     .pannel-roxana {
-         /* height: 650px; */
          width: 780px;
          justify-content: space-evenly;
          margin: 4rem 2rem;
@@ -127,10 +101,6 @@
     code {
         font-size: 2vw;
     }
-
-    /* .message {
-        display: unset;
-    } */
 }
 
 @media screen and (max-width: 770px) {
@@ -149,14 +119,12 @@
     }
 
     .pannel-roxana {
-        /* height: 550px; */
         width: 370px;
     }
 
     .characters-roxana {
         display: flex;
         justify-content: space-around;
-        margin: 1rem 0 0 0.5rem;
         flex-wrap: wrap;
     }
 
@@ -208,43 +176,14 @@
     }
 }
 
-/* .start-btn {
-    display: none;
-    background: #7C7C7C;
-    border-bottom: 6px inset rgba(0,0,0,.5);
-    border-left: 6px inset rgba(0,0,0,.5);
-    border-right: 6px inset rgba(255,255,255,.5);
-    border-top: 6px inset rgba(255,255,255,.5);
-    box-sizing: border-box;
-    color:black;
-    cursor: pointer;
-    font-size: 2rem;
-    min-width: 160px;
-    padding: .5rem;
-    text-transform: uppercase;
-    width: 100px;
-    position: relative;
-    margin-left: 600px;
-   
-   
-} */
-
-
-/* roxana card */
-
   .card-container-roxana {
-      /* display: none; */
       border: 1px solid rgba(0, 0, 0, 0.027);
       width: 500px;
       height: 700px;
-      /* margin-top: 200px;
-      margin-left: 100px; */
       border-radius: 15px;
       box-sizing: border-box;
       box-shadow: 2px 2px 2px 2px #131111;
       background: black;
-      /* position: absolute;
-      left: 10px; */
       margin-top: 10px;
   }
    .card-roxana-background {
@@ -259,20 +198,14 @@
 
   }
 
-  /* jane card */
   .card-container-jane {
-    /* display: none; */
     border: 1px solid rgba(0, 0, 0, 0.027);
     width: 500px;
     height: 700px;
-    /* margin-top: 200px;
-    margin-left: 100px; */
     border-radius: 15px;
     box-sizing: border-box;
     box-shadow: 2px 2px 2px 2px #131111;
     background: black;
-    /* position: absolute;
-    left: 10px; */
     margin-top: 10px;
     display: inline-table;
   }
@@ -289,20 +222,14 @@
 
 }
 
-/* nadine card */
 .card-container-nadine {
-    /* display: none; */
     border: 1px solid rgba(0, 0, 0, 0.027);
     width: 500px;
     height: 700px;
-    /* margin-top: 200px;
-    margin-left: 100px; */
     border-radius: 15px;
     box-sizing: border-box;
     box-shadow: 2px 2px 2px 2px #131111;
     background: black;
-    /* position: absolute;
-    left: 10px; */
     margin-top: 10px;
 
   }
@@ -319,20 +246,15 @@
     background-color: #3D3BFF;
 
 }
- /* viet card */
+
  .card-container-viet {
-    /* display: none; */
     border: 1px solid rgba(0, 0, 0, 0.027);
     width: 500px;
     height: 700px;
-    /* margin-top: 200px;
-    margin-left: 100px; */
     border-radius: 15px;
     box-sizing: border-box;
     box-shadow: 2px 2px 2px 2px #131111;
     background: black;
-    /* position: absolute;
-    left: 10px; */
     margin-top: 10px;
 
   }
@@ -347,7 +269,6 @@
     background-color: #3D3BFF;
 
 }
-            /* BORDERS */
 
 .frame-header,
 .frame-type-line {
@@ -376,17 +297,11 @@
         -3px 3px 2px 5px #171314;
 }
 
-
-            /* OVERFLOW */
-
 .frame-header,
 .frame-type-line,
 .frame-text-box {
     overflow: hidden;
 }
-
-
-            /* CARD FRAME */
 
 .card-frame {
     position: relative;
@@ -396,8 +311,6 @@
     display: flex;
     flex-direction: column;
 }
-
-
 
 .frame-header,
 .frame-type-line {
@@ -676,7 +589,7 @@
 
 .names {
     text-align: center;
-    margin: 5px;
+    margin: 15px 5px 5px;
 }
 
 

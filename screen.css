@@ -4,24 +4,13 @@
     text-align: center;
   margin: 0;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 .frame_text {
     text-align: center;
-    margin-bottom: 7rem;
+    margin-bottom: 3rem;
 }
-a,
-a:visited {
-  border-bottom: 0.2rem solid #14fdce;
-  color: #14fdce;
-  text-decoration: none;
-}
-a:active,
-a:focus,
-a:hover {
-  background-color: #14fdce;
-  color: #031e11;
-}
+
 .piece {
   display: block;
   height: 100%;
@@ -114,7 +103,6 @@ a:hover {
 ::selection [class^="icon-"],
 ::selection [class*=" icon-"] {
   font-family: 'uuxsl';
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
