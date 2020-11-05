@@ -253,21 +253,21 @@ BUTTONS.forEach((element) => {
             HIDDEN_WRAPS.forEach((element) => {
                 element.classList.add('hidden');
             });
+            if (score <= 60) {
+                playMusic('./assets/audio/lose.wav');
+                MESSAGE.innerHTML = 'It could be better...';
+            } else if (score < 120 && score > 60) {
+                playMusic('./assets/audio/mid.wav');
+                MESSAGE.innerHTML = 'Practice more!';
+            } else {
+                playMusic('./assets/audio/win.wav');
+                MESSAGE.innerHTML = 'Good job!!';
+            }
             FIREWALK_WRAP.classList.add('active');
             TYPING_TEXT_WRAP.classList.add('final_score_show');
             SPECH_BUBLE.classList.add('show-message_wrap');
             typeWriter();
             window.localStorage.setItem('userScore', score);
-                if (score <= 60) {
-                    playMusic('./assets/audio/lose.wav');
-                    MESSAGE.innerHTML = 'It could be better...';
-                } else if (score < 120 && score > 60) {
-                    playMusic('./assets/audio/mid.wav');
-                    MESSAGE.innerHTML = 'Practice more!';
-                } else {
-                    playMusic('./assets/audio/win.wav');
-                    MESSAGE.innerHTML = 'Good job!!';
-                }
             setTimeout(() => {
                 FIREWALK_WRAP.classList.remove('active');
             }, 9000);
