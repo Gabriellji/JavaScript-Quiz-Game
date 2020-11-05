@@ -271,6 +271,12 @@ BUTTONS.forEach((element) => {
             setTimeout(() => {
                 FIREWALK_WRAP.classList.remove('active');
             }, 9000);
+            setTimeout(() => {
+                HOME_BTN.style.display = 'unset';
+                HOME_BTN.classList.add('scale-in-center');
+                ABOUT_BTN.style.display = 'unset';
+                ABOUT_BTN.classList.add('scale-in-center');
+            }, 4000);
             return;
         }
         playMusic('./assets/audio/error.wav');
