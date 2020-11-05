@@ -32,10 +32,6 @@
     padding: 4rem 4rem;
 }
 
- .start-btn:hover {
-            background: #BCBCBC;
-        }
-
  .characters-roxana {
     display: flex;
     justify-content: space-around;
