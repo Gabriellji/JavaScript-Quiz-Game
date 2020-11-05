@@ -42,24 +42,16 @@
 
 .pannel-roxana {
     position: relative;
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 450px;
+    /* height: 700px; */
+    /* width: 100%; */
     margin: 0 7rem;
     padding-bottom: 4rem;
-    background-color: white;
-    box-shadow: 24px 25px 0px 1px rgba(0,0,0,1);
 }
 
-.message_wrap-roxana::before {
-    content: '';
-    position: absolute;
-    top: 3rem;
-    left: 0px;
-    width: 100%;
-    border-bottom: 4px solid black;
-}
 
 .message_wrap-roxana {
     justify-content: center;
@@ -75,6 +67,10 @@
      justify-content: space-around;
      margin: 0;
      
+ }
+
+ .characters-roxana div {
+    z-index: 1;
  }
 
  .pic:hover {
@@ -505,6 +501,7 @@
     background: #111323b8;
     border-radius: 20px;
     padding: 2rem;
+    z-index: 30;
 }
 
 .card_text {

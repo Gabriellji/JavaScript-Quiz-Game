@@ -14,6 +14,7 @@ let janeBtn = document.querySelector('.jane-button');
 let nadineBtn = document.querySelector('.nadine-button');
 let vietBtn = document.querySelector('.viet-button');
 
+
 const POXANA_WRAP = document.querySelector('.roxana_wrap');
 const JANE_WRAP = document.querySelector('.jane_wrap');
 const NADINE_WRAP = document.querySelector('.nadine_wrap');
@@ -31,6 +32,10 @@ CLOSE_BTN.forEach((btn) => {
         }, 1000);
     })
 })
+
+const hide = (element) => {
+    element.style.display = 'none';
+}
 
 pic.forEach((item)=>{
     item.addEventListener('click', (el) => {
@@ -52,7 +57,6 @@ pic.forEach((item)=>{
         vietBtn.style.display = 'flex';
        }
         wrapper.style.display = 'none';
-        bubble.style.display = 'block';
     })
 })
 
@@ -236,12 +240,16 @@ CHARACTERS_BUTTONS.forEach((button) => {
         playMusic('./assets/audio/success.wav');
         PRE_GAME_WRAP.classList.add('scale-out-ver-bottom');
         if(e.target.classList.contains('viet-button')) {
-            console.log('dfghh');
+            hide(VIET_WRAP);
             VIET_POWER.classList.add('show-power');
         } else if (e.target.classList.contains('nadine-button')) {
+            hide(NADINE_WRAP);
             SCORE_BUST.classList.add('show-bust');
         } else if (e.target.classList.contains('roxan-button')) {
+            hide(POXANA_WRAP);
             ROXANA_POWER_WRAP.classList.add('show-treasure');
+        } else {
+            hide(JANE_WRAP);
         }
         setTimeout(() => { PRE_GAME_WRAP.style.display = 'none'}, 1000);
     });
