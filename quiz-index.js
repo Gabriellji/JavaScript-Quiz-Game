@@ -328,7 +328,7 @@ const buttonsClickHandler = () => {
             if(event.target.classList.contains('home')) {
                 window.location.reload();
             } else {
-                window.location.href = './finalpage-index.html';
+                window.location.href = './finalpage.html';
             }
         });
     });

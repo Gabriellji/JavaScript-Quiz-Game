@@ -1,0 +1,210 @@
+@font-face {
+    font-family: "bit-font";
+    src: url('./fonts/gamegirlclassic-9mvj-webfont.woff2') format("woff2"),
+           url("./fonts/gamegirlclassic-9mvj-webfont.woff") format("woff");
+   }
+
+*,*:before,*:after {
+    box-sizing: border-box;
+}
+
+button, a {
+    cursor: pointer;
+}
+
+body {
+    font-family: "bit-font";
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('./assets/gif/2.gif');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    padding: 2rem;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 70%;
+    height: 70%;
+    border-radius: 10px;
+    background-color: #0304058f;
+    display: flex;
+    padding: 2rem;
+    color: white;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.picbox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.wrap-pic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pic{
+    width: 180px;
+    height: 180px;
+    margin-top: 50px;
+    border-radius: 5px;
+    border: 3px solid white;
+    background-size: cover;
+
+}
+
+.roxana-pic {
+    background-image: url('./assets/img/Roxana.jpg');
+}
+
+.jane-pic {
+    background-image: url('./assets/img/Jane.jpg');
+}
+
+.viet-pic {
+    background-image: url('./assets/img/nadine.PNG');
+}
+
+.nadine-pic {
+    background-image: url('./assets/img/Viet.png');
+}
+
+.textbox {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.text {
+    line-height: 22px;
+}
+
+
+
+.link {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
+
+.link img {
+    width: 30px;
+    filter: invert();
+}
+
+.link a {
+    transition: all .25s ease-in-out;
+}
+
+.link a:hover {
+    transform: scale(1.5, 1.5);
+}
+
+.btn_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.power {
+    font-family: "bit-font";
+    background-color: #a73171;
+    position: relative;
+    text-align: center;
+    height: fit-content;
+    width: fit-content;
+    font-size: 2vw;
+    outline: none;
+    padding: 20px;
+	text-decoration: none;
+    color: white;
+    transition: all .25s ease-in-out;
+    box-shadow: 
+    inset -4px -4px 0px 0px #0e0e0e,
+    10px 10px 0px 1px rgba(0,0,0,1);
+}
+
+.power:active {
+	box-shadow: inset 4px 4px 0px 0px #0a0b0a;
+}
+
+.power:before, .power:after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	box-sizing: content-box;
+}
+
+.power:before {
+	top: -6px;
+	left: 0;
+	border-top: 6px black solid;
+	border-bottom: 6px black solid;
+}
+
+.power:after {
+	left: -6px;
+	top: 0;
+	border-left: 6px black solid;
+	border-right: 6px black solid;
+}
+
+.power:hover {
+    transform: scale(1.1, 1.1);
+}
+
+@media screen and (max-width: 1200px) {
+    .content {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .textbox {
+        text-align: center;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .pic {
+        width: 120px;
+        height: 120px;
+        margin-top: 50px;
+        border-radius: 5px;
+        border: 3px solid white;
+        background-size: cover;
+    }
+
+    .textbox {
+        font-size: 9px;
+    }
+
+    .text {
+        line-height: 17px;
+    }
+}
+
