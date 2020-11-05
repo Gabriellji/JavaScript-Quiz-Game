@@ -63,9 +63,10 @@
         }
 
  .characters-roxana {
-     display: flex;
-     justify-content: space-around;
-     margin: 0;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    flex-wrap: wrap;
      
  }
 
@@ -96,11 +97,15 @@
 
 @media screen and (max-width: 1025px) {
     .pannel-roxana {
-         height: 650px;
+         /* height: 650px; */
          width: 780px;
          justify-content: space-evenly;
          margin: 4rem 2rem;
          padding-bottom: 0;
+    }
+
+    .frame_text {
+        margin: 0;
     }
 
     .message_wrap-roxana {
@@ -128,6 +133,12 @@
     } */
 }
 
+@media screen and (max-width: 770px) {
+    .main-roxana {
+        align-items: unset;
+    }
+}
+
 @media screen and (max-width: 570px) {
     code {
         font-size: 2.5vw;
@@ -138,16 +149,46 @@
     }
 
     .pannel-roxana {
-        height: 550px;
+        /* height: 550px; */
         width: 370px;
+    }
+
+    .characters-roxana {
+        display: flex;
+        justify-content: space-around;
+        margin: 1rem 0 0 0.5rem;
+        flex-wrap: wrap;
     }
 
     .message-roxana {
         padding: 0 2rem;
     }
 
+    .pic {
+        width: 80px;
+        height: 80px;
+    }
+
     
 }
+
+@media screen and (max-width: 500px) {
+        .pannel-roxana {
+            width: 340px;
+        }
+        .characters-roxana div {
+            margin: 1rem 0;
+        }
+}
+
+@media screen and (max-width: 340px) {
+    .pannel-roxana {
+        width: 290px;
+    }
+}
+
+
+
 
 
  @media screen and (max-width: 320px) {
@@ -604,8 +645,33 @@
   
 
   .pic {
-    border-radius: 50%;
-    margin-top: -50px;
+    border-radius: 16px;
+    border: 1px solid #121212c2;
+    box-shadow: 
+    inset -4px -4px 0px 0px #0e0e0e,
+    10px 10px 0px 1px rgb(8, 8, 8);
+}
+
+.pic:before, .pic:after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	box-sizing: content-box;
+}
+
+.pic:before {
+	top: -6px;
+	left: 0;
+	border-top: 6px black solid;
+	border-bottom: 6px black solid;
+}
+
+.pic:after {
+	left: -6px;
+	top: 0;
+	border-left: 6px black solid;
+	border-right: 6px black solid;
 }
 
 .names {
