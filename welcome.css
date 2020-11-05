@@ -50,127 +50,7 @@
  }
 
 
- @media only screen and (min-width: 600px) and (max-width: 1023px) {
-    .characters-roxana {
-        flex-wrap: wrap;
-    }
-    .pic {
-        width: 150px;
-    }
-  }
-
-
-  @media screen and (max-width: 1600px ) {
-    .pannel {
-        width: 1000px;
-    }
-}
-
-@media screen and (max-width: 1025px) {
-    .pannel-roxana {
-         width: 780px;
-         justify-content: space-evenly;
-         margin: 4rem 2rem;
-         padding-bottom: 0;
-    }
-
-    .frame_text {
-        margin: 0;
-    }
-
-    .message_wrap-roxana {
-        padding: 0 4rem;
-        height: 115px;
-    }
-}
-
-
-@media screen and (max-width: 970px) {
-    .header {
-        height: 50px;
-    }
-
-    .pannel-roxana {
-        width: 500px;
-  
-   }
-    code {
-        font-size: 2vw;
-    }
-}
-
-@media screen and (max-width: 770px) {
-    .main-roxana {
-        align-items: unset;
-    }
-}
-
-@media screen and (max-width: 570px) {
-    code {
-        font-size: 2.5vw;
-    }
-
-    .type_text {
-        font-size: 20px;
-    }
-
-    .pannel-roxana {
-        width: 370px;
-    }
-
-    .characters-roxana {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-
-    .message-roxana {
-        padding: 0 2rem;
-    }
-
-    .pic {
-        width: 80px;
-        height: 80px;
-    }
-
-    
-}
-
-@media screen and (max-width: 500px) {
-        .pannel-roxana {
-            width: 340px;
-        }
-        .characters-roxana div {
-            margin: 1rem 0;
-        }
-}
-
-@media screen and (max-width: 340px) {
-    .pannel-roxana {
-        width: 290px;
-    }
-}
-
-
-
-
-
- @media screen and (max-width: 320px) {
-    .message-roxana {
-        font-size: 15px;
-    }
-    .pannel-roxana {
-        width: 285px;
-    }
-    
-    .characters-roxana {
-        display: flex;
-        
-    }
-    .pic {
-        width: 100px;
-    }
-}
+ 
 
   .card-container-roxana {
       border: 1px solid rgba(0, 0, 0, 0.027);
@@ -589,4 +469,161 @@
 }
 
 
+  @media screen and (max-width: 1600px ) {
+    .pannel {
+        width: 1000px;
+    }
+}
 
+@media screen and (max-width: 1180px) {
+    body {
+        align-items: unset !important;
+    }
+    .card_wrap {
+        flex-wrap: wrap;
+        margin: 2rem;
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
+    .characters-roxana {
+        flex-wrap: wrap;
+    }
+    .pic {
+        width: 150px;
+    }
+  }
+
+@media screen and (max-width: 1025px) {
+    .pannel-roxana {
+         width: 780px;
+         justify-content: space-evenly;
+         margin: 4rem 2rem;
+         padding-bottom: 0;
+    }
+
+    .frame_text {
+        margin: 0;
+    }
+
+    .message_wrap-roxana {
+        padding: 0 4rem;
+        height: 115px;
+    }
+}
+
+
+@media screen and (max-width: 970px) {
+    .header {
+        height: 50px;
+    }
+
+    .pannel-roxana {
+        width: 500px;
+  
+   }
+    code {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .card-container-jane {
+        width: 440px;
+    }
+    .card-container-roxana {
+        width: 440px;
+    }
+    .card-container-viet {
+        width: 440px;
+    }
+    .card-container-nadine {
+        width: 440px;
+    }
+
+    .card_wrap_more {
+        padding: 1rem;
+    }
+
+    .card_text {
+        margin-bottom: 1rem;
+    }
+
+    .type {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .main-roxana {
+        align-items: unset;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    code {
+        font-size: 2.5vw;
+    }
+
+    .type_text {
+        font-size: 20px;
+    }
+
+    .pannel-roxana {
+        width: 370px;
+    }
+
+    .characters-roxana {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .message-roxana {
+        padding: 0 2rem;
+    }
+
+    .pic {
+        width: 80px;
+        height: 80px;
+    }
+
+    
+}
+
+@media screen and (max-width: 500px) {
+        .pannel-roxana {
+            width: 340px;
+        }
+        .characters-roxana div {
+            margin: 1rem 0;
+        }
+}
+
+@media screen and (max-width: 340px) {
+    .pannel-roxana {
+        width: 290px;
+    }
+}
+
+
+
+
+
+ @media screen and (max-width: 320px) {
+    .message-roxana {
+        font-size: 15px;
+    }
+    .pannel-roxana {
+        width: 285px;
+    }
+    
+    .characters-roxana {
+        display: flex;
+        
+    }
+    .pic {
+        width: 100px;
+    }
+}
