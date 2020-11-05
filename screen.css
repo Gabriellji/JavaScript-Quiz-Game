@@ -48,7 +48,7 @@
 }
 .output {
     animation: crt-output 10ms infinite;
-    background-color: #083921;
+    background-color: #083921b5;
     overflow: scroll;
     position: relative;
     padding: 3rem 2rem;
