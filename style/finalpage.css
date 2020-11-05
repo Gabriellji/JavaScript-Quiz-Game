@@ -1,7 +1,7 @@
 @font-face {
     font-family: "bit-font";
-    src: url('./fonts/gamegirlclassic-9mvj-webfont.woff2') format("woff2"),
-           url("./fonts/gamegirlclassic-9mvj-webfont.woff") format("woff");
+    src: url('../fonts/gamegirlclassic-9mvj-webfont.woff2') format("woff2"),
+           url("../fonts/gamegirlclassic-9mvj-webfont.woff") format("woff");
    }
 
 *,*:before,*:after {
@@ -22,7 +22,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('./assets/gif/2.gif');
+    background-image: url('../assets/gif/2.gif');
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,19 +78,19 @@ body {
 }
 
 .roxana-pic {
-    background-image: url('./assets/img/Roxana.jpg');
+    background-image: url('../assets/img/Roxana.jpg');
 }
 
 .jane-pic {
-    background-image: url('./assets/img/Jane.jpg');
+    background-image: url('../assets/img/Jane.jpg');
 }
 
 .viet-pic {
-    background-image: url('./assets/img/nadine.PNG');
+    background-image: url('../assets/img/nadine.PNG');
 }
 
 .nadine-pic {
-    background-image: url('./assets/img/Viet.png');
+    background-image: url('../assets/img/Viet.png');
 }
 
 .textbox {

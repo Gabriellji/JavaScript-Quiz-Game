@@ -1,7 +1,7 @@
 @font-face {
     font-family: "bit-font";
-    src: url('./fonts/gamegirlclassic-9mvj-webfont.woff2') format("woff2"),
-           url("./fonts/gamegirlclassic-9mvj-webfont.woff") format("woff");
+    src: url('../fonts/gamegirlclassic-9mvj-webfont.woff2') format("woff2"),
+           url("../fonts/gamegirlclassic-9mvj-webfont.woff") format("woff");
    }
 
 *,*:before,*:after {
@@ -29,7 +29,7 @@ button {
     background-color: #3D3BFF;
     height: 100vh;
     width: 100vw;
-    background-image: url(./assets/gif/IllegalNewArrowcrab-size_restricted.gif);
+    background-image: url('../assets/gif/IllegalNewArrowcrab-size_restricted.gif');
     background-size: cover;
 }
 
@@ -485,7 +485,7 @@ pre {
         justify-content: center;
         align-items: center;
         background-color: #3D3BFF;
-        background: url('./assets/gif/tumblr_e97a90e92146ee85c0a1396fcbf4a378_4d7183fd_500.gif') no-repeat center center fixed; 
+        background: url('../assets/gif/tumblr_e97a90e92146ee85c0a1396fcbf4a378_4d7183fd_500.gif') no-repeat center center fixed; 
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;

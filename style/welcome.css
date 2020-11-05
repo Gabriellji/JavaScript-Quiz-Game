@@ -1,7 +1,7 @@
 @font-face {
     font-family: "bit-font";
-    src: url('./fonts/gamegirlclassic-9mvj-webfont.woff2') format("woff2"),
-           url("./fonts/gamegirlclassic-9mvj-webfont.woff") format("woff");
+    src: url('../fonts/gamegirlclassic-9mvj-webfont.woff2') format("woff2"),
+           url("../fonts/gamegirlclassic-9mvj-webfont.woff") format("woff");
    }
 
 *,*:before,*:after {
