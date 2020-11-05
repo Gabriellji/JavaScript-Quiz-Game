@@ -126,7 +126,9 @@ const quizQuestions = [
         isCorrect: true,
     },
     {
+
         question: 'Can we multiply a string with a number?',
+
         isCorrect: false,
     },
     {
