@@ -32,6 +32,10 @@ const ONE_SECOND_DIV = document.querySelector('.one_second');
 const ROXANA_POWER_WRAP = document.querySelector('.roxana_power');
 const TREASURE_CHEST = document.querySelector('.treasure');
 
+const HOME_BTN = document.querySelector('.home');
+const ABOUT_BTN = document.querySelector('.about');
+const FINAL_BTN = document.querySelectorAll('.final_btn');
+
 const userStringFromLocalStorage = localStorage.getItem('userScore');
 LAST_SCORE.innerHTML = userStringFromLocalStorage;
 
@@ -311,3 +315,17 @@ BUTTONS.forEach((element) => {
     });
     
 });
+
+const buttonsClickHandler = () => {
+    FINAL_BTN.forEach(elem => {
+        elem.addEventListener('click', (event) => {
+            if(event.target.classList.contains('home')) {
+                window.location.reload();
+            } else {
+                window.location.href = './finalpage-index.html';
+            }
+        });
+    });
+};
+
+buttonsClickHandler();
