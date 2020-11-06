@@ -1,100 +1,101 @@
 .message_wrap {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 2rem;
-    z-index: 10;
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 2rem;
+	z-index: 10;
 }
 
 .show-message_wrap {
-    display: unset;
+	display: unset;
 }
 
 #speech-bubble {
-    width: auto;
-    max-width: 75%;
-    height: auto;
-    background-color: #fff;
-    padding: 25px;
-    display: inline-block;
-    margin: 30px 30px 70px;
-    position: relative;
-    animation: bounce 1s ease-in-out infinite alternate;
-    box-shadow: 0 -10px 0 #fff, 0 -20px 0 #000, -10px 0 0 #fff, -20px 0 0 #000, 0 10px 0 #fff, 0 20px 0 #000, 10px 0 0 #fff, 20px 0 0 #000, -10px -10px 0 #000, 10px 10px 0 #000, -10px 10px 0 #000, 10px -10px 0 #000;
-  }
-  
-  #speech-bubble:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 5%;
-    width: 10px;
-    height: 10px;
-    margin-bottom: -20px;
-    background-color: #fff;
-    box-shadow: 10px 0 0 #fff, 20px 0 0 #fff, 30px 0 0 #fff, 40px 0 0 #fff, 50px 0 0 #fff, -10px 10px 0 #000, 0px 10px 0 #fff, 10px 10px 0 #fff, 20px 10px 0 #fff, 30px 10px 0 #fff, 40px 10px 0 #fff, 50px 10px 0 #000, -30px 20px 0 #000, -20px 20px 0 #000, -10px 20px 0 #fff, 0px 20px 0 #fff, 10px 20px 0 #fff, 20px 20px 0 #fff, 30px 20px 0 #000, 40px 20px 0 #000, -40px 30px 0 #000, -30px 30px 0 #fff, -20px 30px 0 #fff, -10px 30px 0 #fff, 0px 30px 0 #fff, 10px 30px 0 #000, 20px 30px 0 #000, -40px 40px 0 #000, -30px 40px 0 #000, -20px 40px 0 #000, -10px 40px 0 #000, 0px 40px 0 #000;
-  }
-  
-  .message_text {
-    min-width: 25px;
-    display: inline-block;
-    margin: 0;
-    font-size: 1.4em;
-    line-height: 1.5em;
-    position: relative;
-  }
-  
-  .message_text:empty:before {
-    content: "Inspired by the awesome NES.css";
-    color: #555;
-    border: 1px solid #ccc;
-  }
-  
-  .message_text:empty:focus:before {
-    content: "";
-    width: 25px;
-    height: 1em;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-bottom: 5px solid #000;
-  }
-  
-  .message_text:focus {
-    outline: none;
-  }
-  .message_text:focus:after {
-    display: none;
-  }
-  
-  .message_text:after {
-    content: "";
-    height: 20px;
-    width: 10px;
-    margin-top: 5px;
-    margin-left: 10px;
-    background-color: #000;
-    border: 0;
-    display: inline-block;
-    position: absolute;
-    animation: blink 1000ms infinite;
-  }
-  
-  @keyframes blink {
-    0% {
-      background-color: #000;
-    }
-    49.99999% {
-      background-color: #000;
-    }
-    50% {
-      background-color: #fff;
-    }
-    100% {
-      background-color: #fff;
-    }
-  }
+	width: auto;
+	max-width: 75%;
+	height: auto;
+	background-color: #fff;
+	padding: 25px;
+	display: inline-block;
+	margin: 30px 30px 70px;
+	position: relative;
+	animation: bounce 1s ease-in-out infinite alternate;
+	box-shadow: 0 -10px 0 #fff, 0 -20px 0 #000, -10px 0 0 #fff, -20px 0 0 #000, 0 10px 0 #fff, 0 20px 0 #000, 10px 0 0 #fff, 20px 0 0 #000, -10px -10px 0 #000, 10px 10px 0 #000, -10px 10px 0 #000, 10px -10px 0 #000;
+}
 
-  @keyframes bounce {
+#speech-bubble:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 5%;
+	width: 10px;
+	height: 10px;
+	margin-bottom: -20px;
+	background-color: #fff;
+	box-shadow: 10px 0 0 #fff, 20px 0 0 #fff, 30px 0 0 #fff, 40px 0 0 #fff, 50px 0 0 #fff, -10px 10px 0 #000, 0px 10px 0 #fff, 10px 10px 0 #fff, 20px 10px 0 #fff, 30px 10px 0 #fff, 40px 10px 0 #fff, 50px 10px 0 #000, -30px 20px 0 #000, -20px 20px 0 #000, -10px 20px 0 #fff, 0px 20px 0 #fff, 10px 20px 0 #fff, 20px 20px 0 #fff, 30px 20px 0 #000, 40px 20px 0 #000, -40px 30px 0 #000, -30px 30px 0 #fff, -20px 30px 0 #fff, -10px 30px 0 #fff, 0px 30px 0 #fff, 10px 30px 0 #000, 20px 30px 0 #000, -40px 40px 0 #000, -30px 40px 0 #000, -20px 40px 0 #000, -10px 40px 0 #000, 0px 40px 0 #000;
+}
+
+.message_text {
+	min-width: 25px;
+	display: inline-block;
+	margin: 0;
+	font-size: 1.4em;
+	line-height: 1.5em;
+	position: relative;
+}
+
+.message_text:empty:before {
+	content: "Inspired by the awesome NES.css";
+	color: #555;
+	border: 1px solid #ccc;
+}
+
+.message_text:empty:focus:before {
+	content: "";
+	width: 25px;
+	height: 1em;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-bottom: 5px solid #000;
+}
+
+.message_text:focus {
+	outline: none;
+}
+
+.message_text:focus:after {
+	display: none;
+}
+
+.message_text:after {
+	content: "";
+	height: 20px;
+	width: 10px;
+	margin-top: 5px;
+	margin-left: 10px;
+	background-color: #000;
+	border: 0;
+	display: inline-block;
+	position: absolute;
+	animation: blink 1000ms infinite;
+}
+
+@keyframes blink {
+	0% {
+		background-color: #000;
+	}
+	49.99999% {
+		background-color: #000;
+	}
+	50% {
+		background-color: #fff;
+	}
+	100% {
+		background-color: #fff;
+	}
+}
+
+@keyframes bounce {
 	from {
 		transform: translateY(0);
 	}
